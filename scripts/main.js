@@ -226,6 +226,24 @@
   // ========================
   // 10. TEACHER SEARCH (only on academics page)
   // ========================
+  // 9b. PATHWAY SUB-TABS (inside departments panel)
+  // ========================
+  const pathwayBtns = $$('.pathway-filter-btn');
+  if (pathwayBtns.length > 0) {
+    pathwayBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        $$('.pathway-filter-btn').forEach(b => b.classList.remove('active'));
+        $$('.pathway-detail').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = $(`#pathway-${btn.dataset.pathway}`);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  }
+
+  // ========================
+  // 10. TEACHER SEARCH (only on academics page)
+  // ========================
   const teacherSearch = $('#teacherSearch');
   if (teacherSearch) {
     teacherSearch.addEventListener('input', (e) => {

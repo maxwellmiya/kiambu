@@ -90,20 +90,24 @@
         <div class="deputy-photo">
           <img src="images/DEPUTY_PRINCIPAL_ACADEMICS.png" alt="Mr. Samuel Kamau — Deputy Principal Academics" loading="lazy">
         </div>
-        <h4>Mr. Samuel Kamau</h4>
-        <p class="deputy-title">Deputy Principal — Academics</p>
-        <div class="quote-box">
-          "Academic excellence is the cornerstone of Kiambu High School. Our dedicated team of educators ensures that every student receives the support and challenge they need to reach their full potential. With seven streams delivering quality instruction across STEM, Social Sciences, and Arts pathways, we are preparing our boys for success in Kenya's Competency-Based Curriculum and beyond."
+        <div class="deputy-card-text">
+          <h4>Mr. Samuel Kamau</h4>
+          <p class="deputy-title">Deputy Principal — Academics</p>
+          <div class="quote-box">
+            "Academic excellence is the cornerstone of Kiambu High School. Our dedicated team of educators ensures that every student receives the support and challenge they need to reach their full potential. With seven streams delivering quality instruction across STEM, Social Sciences, and Arts pathways, we are preparing our boys for success in Kenya's Competency-Based Curriculum and beyond."
+          </div>
         </div>
       </div>
       <div class="deputy-card reveal reveal-delay-1">
         <div class="deputy-photo">
           <img src="images/DEPUTY_PRINCIPAL_ADMINISTRATION.png" alt="Mr. Nicholas Maina — Deputy Principal Administration" loading="lazy">
         </div>
-        <h4>Mr. Nicholas Maina</h4>
-        <p class="deputy-title">Deputy Principal — Administration</p>
-        <div class="quote-box">
-          "A well-administered school is the foundation upon which academic achievement is built. From our modern dormitories to our 35-acre campus infrastructure, we ensure that every aspect of student welfare is taken care of — so our boys can focus on what matters most: learning, growing, and becoming men of integrity."
+        <div class="deputy-card-text">
+          <h4>Mr. Nicholas Maina</h4>
+          <p class="deputy-title">Deputy Principal — Administration</p>
+          <div class="quote-box">
+            "A well-administered school is the foundation upon which academic achievement is built. From our modern dormitories to our 35-acre campus infrastructure, we ensure that every aspect of student welfare is taken care of — so our boys can focus on what matters most: learning, growing, and becoming men of integrity."
+          </div>
         </div>
       </div>
     </div>
@@ -180,68 +184,129 @@
 
     <!-- Departments Panel -->
     <div class="academics-panel" id="acad-departments">
-      <div class="text-center" style="margin-bottom: 2rem;">
-        <p class="section-label">Competency-Based Education</p>
-        <h3>Our Academic Pathways</h3>
-        <p style="max-width: 600px; margin: 0.5rem auto 0; color: #7A6470;">Three specialised pathways delivering Kenya's CBC curriculum, supported by dedicated faculty and modern facilities</p>
-      </div>
-      <div class="departments-grid">
-        <!-- STEM Pathway -->
-        <div class="pathway-dept-card">
-          <div class="pathway-dept-bg" style="background-image: url('images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg');"></div>
-          <div class="pathway-dept-overlay"></div>
-          <div class="pathway-dept-content">
-            <span class="pathway-dept-number">01</span>
-            <h4>STEM Pathway</h4>
-            <p class="pathway-dept-sub">Science, Technology, Engineering & Mathematics</p>
-            <p>Pure Sciences (Biology, Chemistry, Physics), Applied Sciences, Computer Studies, Agriculture, and Technical subjects including Power Mechanics. Fully equipped modern laboratories and an ICT centre with broadband connectivity.</p>
-            <div class="pathway-dept-subjects">
-              <span>Physics</span>
-              <span>Chemistry</span>
-              <span>Biology</span>
-              <span>Mathematics</span>
-              <span>Computer Studies</span>
-              <span>Agriculture</span>
-              <span>Power Mechanics</span>
+      <div class="pathway-section" style="background-image: url('images/TEACHING_STAFF.png');">
+        <div class="pathway-section-overlay"></div>
+        <div class="pathway-section-inner">
+          <div class="pathway-filter-tabs">
+            <button class="pathway-filter-btn active" data-pathway="stem">STEM</button>
+            <button class="pathway-filter-btn" data-pathway="social">Social Sciences</button>
+            <button class="pathway-filter-btn" data-pathway="arts">Arts &amp; Sports</button>
+          </div>
+
+          <!-- STEM Pathway -->
+          <div class="pathway-detail active" id="pathway-stem">
+            <div class="pathway-detail-grid">
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">⚡</div>
+                <h4>Pure Sciences</h4>
+                <p class="pathway-detail-sub">Biology, Chemistry, Physics</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Biology</strong> — Anatomy, Ecology, Genetics, Microbiology</li>
+                  <li><strong>Chemistry</strong> — Organic, Inorganic, Analytical</li>
+                  <li><strong>Physics</strong> — Mechanics, Optics, Electronics, Thermodynamics</li>
+                </ul>
+                <div class="pathway-detail-footer">🧪 Dedicated laboratories for each science discipline</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">💻</div>
+                <h4>Applied Sciences &amp; Technology</h4>
+                <p class="pathway-detail-sub">Computer Science, ICT</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Computer Science</strong> — Programming, Algorithms, Data Structures</li>
+                  <li><strong>ICT</strong> — Digital Literacy, Networking, Multimedia</li>
+                  <li><strong>Technical Drawing &amp; Design</strong></li>
+                </ul>
+                <div class="pathway-detail-footer">💻 Modern computer labs with latest software</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">📐</div>
+                <h4>Mathematics &amp; Technical</h4>
+                <p class="pathway-detail-sub">Pure Math, Applied Math, Technical Studies</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Pure Mathematics</strong> — Calculus, Algebra, Statistics</li>
+                  <li><strong>Applied Mathematics</strong> — Problem solving, Modelling</li>
+                  <li><strong>Building Construction &amp; Woodwork</strong></li>
+                </ul>
+                <div class="pathway-detail-footer">📒 Practical workshops for hands-on learning</div>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Social Sciences Pathway -->
-        <div class="pathway-dept-card">
-          <div class="pathway-dept-bg" style="background-image: url('images/gallery/academics/FORM 3A - MR. WAIGANJO.jpg');"></div>
-          <div class="pathway-dept-overlay"></div>
-          <div class="pathway-dept-content">
-            <span class="pathway-dept-number">02</span>
-            <h4>Social Sciences Pathway</h4>
-            <p class="pathway-dept-sub">Languages, Humanities & Business Studies</p>
-            <p>Preparing future lawyers, economists, public servants, and diplomats. Comprehensive curriculum covering English, Kiswahili, French, History, Geography, Religious Education, Business Studies, and Economics. Strong debating and Model UN culture.</p>
-            <div class="pathway-dept-subjects">
-              <span>English</span>
-              <span>Kiswahili</span>
-              <span>History</span>
-              <span>Geography</span>
-              <span>Business Studies</span>
-              <span>CRE</span>
-              <span>French</span>
+
+          <!-- Social Sciences Pathway -->
+          <div class="pathway-detail" id="pathway-social">
+            <div class="pathway-detail-grid">
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">📖</div>
+                <h4>Languages &amp; Literature</h4>
+                <p class="pathway-detail-sub">English, Kiswahili, French</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>English</strong> — Language, Literature, Creative Writing</li>
+                  <li><strong>Kiswahili</strong> — Lugha, Fasihi, Insha</li>
+                  <li><strong>French</strong> — Conversational &amp; Written French</li>
+                </ul>
+                <div class="pathway-detail-footer">📚 Rich library resources &amp; language labs</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">🌍</div>
+                <h4>Humanities &amp; Social Studies</h4>
+                <p class="pathway-detail-sub">History, Geography, CRE</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>History &amp; Government</strong> — Kenyan, African, World History</li>
+                  <li><strong>Geography</strong> — Physical, Human, Environmental</li>
+                  <li><strong>CRE</strong> — Ethics, Theology, Community Service</li>
+                </ul>
+                <div class="pathway-detail-footer">🏛️ Field trips &amp; experiential learning</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">📊</div>
+                <h4>Business &amp; Economics</h4>
+                <p class="pathway-detail-sub">Business Studies, Economics</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Business Studies</strong> — Entrepreneurship, Management, Marketing</li>
+                  <li><strong>Economics</strong> — Micro, Macro, Development Economics</li>
+                  <li><strong>Financial Literacy &amp; Projects</strong></li>
+                </ul>
+                <div class="pathway-detail-footer">💼 Real-world business case studies</div>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Arts & Sports Pathway -->
-        <div class="pathway-dept-card">
-          <div class="pathway-dept-bg" style="background-image: url('images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO.jpg');"></div>
-          <div class="pathway-dept-overlay"></div>
-          <div class="pathway-dept-content">
-            <span class="pathway-dept-number">03</span>
-            <h4>Arts & Sports Pathway</h4>
-            <p class="pathway-dept-sub">Music, Drama, Fine Art, PE & Sports Science</p>
-            <p>For students passionate about creative and athletic pursuits. Award-winning music department (5× national choir champions), active drama club with national festival participation, fine art exhibitions, and a semi-Olympic swimming pool. Home Science also offered.</p>
-            <div class="pathway-dept-subjects">
-              <span>Music</span>
-              <span>Drama</span>
-              <span>Fine Art</span>
-              <span>PE</span>
-              <span>Home Science</span>
-              <span>Sports Science</span>
+
+          <!-- Arts & Sports Pathway -->
+          <div class="pathway-detail" id="pathway-arts">
+            <div class="pathway-detail-grid">
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">🎵</div>
+                <h4>Performing Arts</h4>
+                <p class="pathway-detail-sub">Music, Drama, Dance</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Music</strong> — Theory, Performance, 5× National Choir Champions</li>
+                  <li><strong>Drama</strong> — Theatre, Film, National Festival participation</li>
+                  <li><strong>Dance</strong> — Traditional, Contemporary</li>
+                </ul>
+                <div class="pathway-detail-footer">🎭 Annual concert &amp; drama productions</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">🎨</div>
+                <h4>Visual Arts &amp; Design</h4>
+                <p class="pathway-detail-sub">Fine Art, Photography</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Fine Art</strong> — Drawing, Painting, Sculpture</li>
+                  <li><strong>Photography</strong> — Digital, Darkroom techniques</li>
+                  <li><strong>Art &amp; Design</strong> — Graphic Design basics</li>
+                </ul>
+                <div class="pathway-detail-footer">🖼️ Annual art exhibitions</div>
+              </div>
+              <div class="pathway-detail-card">
+                <div class="pathway-detail-icon">🏅</div>
+                <h4>Sports &amp; Physical Education</h4>
+                <p class="pathway-detail-sub">PE, Sports Science</p>
+                <ul class="pathway-detail-list">
+                  <li><strong>Football &amp; Athletics</strong> — Regional Champions</li>
+                  <li><strong>Swimming</strong> — Semi-Olympic pool since 2018</li>
+                  <li><strong>Rugby, Basketball, Volleyball, Badminton</strong></li>
+                </ul>
+                <div class="pathway-detail-footer">🏊 World-class sporting facilities</div>
+              </div>
             </div>
           </div>
         </div>
