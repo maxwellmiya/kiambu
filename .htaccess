@@ -1,0 +1,151 @@
+# ============================================================
+# Kiambu High School — .htaccess Security & Clean URLs
+# ============================================================
+
+# ── Force HTTPS ──────────────────────────────────────────────
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ── Remove .html Extension (Clean URLs) ─────────────────────
+# Redirect .html requests to clean URL (external redirect)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Internally serve clean URLs from .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# ── Redirect /index to root ─────────────────────────────────
+RewriteRule ^index$ / [R=301,L]
+
+# ── Security Headers ────────────────────────────────────────
+<IfModule mod_headers.c>
+    # Prevent XSS attacks
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Strict Transport Security (force HTTPS for 1 year)
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy (disable unnecessary browser features)
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+
+    # Content Security Policy — prevents XSS, injection, and unauthorized resources
+    Header set Content-Security-Policy "\
+        default-src 'self'; \
+        script-src 'self' 'unsafe-inline'; \
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+        font-src 'self' https://fonts.gstatic.com; \
+        img-src 'self' data: https://placehold.co; \
+        connect-src 'self'; \
+        frame-ancestors 'self'; \
+        form-action 'self'; \
+        base-uri 'self'; \
+        object-src 'none'; \
+        upgrade-insecure-requests"
+
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+
+    # Prevent caching of sensitive pages
+    Header set Cache-Control "no-store, no-cache, must-revalidate" env=NO_CACHE
+</IfModule>
+
+# ── Disable Directory Browsing ──────────────────────────────
+Options -Indexes
+
+# ── Block Sensitive Files ────────────────────────────────────
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|bak|config|dist|fla|inc|psd|sql|sw[op])$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to .git directory
+RedirectMatch 404 /\.git
+
+# Block access to .cpanel.yml
+<Files ".cpanel.yml">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</Files>
+
+# ── Block Malicious Requests (SQL Injection, XSS, etc.) ─────
+<IfModule mod_rewrite.c>
+    # Block SQL injection attempts
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+    RewriteCond %{QUERY_STRING} (union)(.*)(select) [NC,OR]
+    RewriteCond %{QUERY_STRING} (insert)(.*)(into) [NC,OR]
+    RewriteCond %{QUERY_STRING} (drop)(.*)(table) [NC,OR]
+    RewriteCond %{QUERY_STRING} (delete)(.*)(from) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+    RewriteCond %{QUERY_STRING} (localhost|loopback) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+    RewriteCond %{QUERY_STRING} (base64_encode|base64_decode) [NC,OR]
+    RewriteCond %{QUERY_STRING} (%24&x) [NC,OR]
+    RewriteCond %{QUERY_STRING} (127\.0) [OR]
+    RewriteCond %{QUERY_STRING} (javascript\:) [NC,OR]
+    RewriteCond %{QUERY_STRING} (document\.cookie) [NC,OR]
+    RewriteCond %{QUERY_STRING} (document\.write) [NC,OR]
+    RewriteCond %{QUERY_STRING} (window\.) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<script) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\bsrc=) [NC,OR]
+    RewriteCond %{QUERY_STRING} (eval\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (fromcharcode) [NC,OR]
+    RewriteCond %{QUERY_STRING} (wget|curl) [NC,OR]
+    RewriteCond %{QUERY_STRING} (;|'|"|%22).*(union|select|insert|drop|update|delete|concat|char|cast|create|exec|table|from|grant|group_concat|information_schema|load_file|benchmark|sleep) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block suspicious user agents (bots, scanners, exploit tools)
+    RewriteCond %{HTTP_USER_AGENT} (havij|sqlmap|nikto|nmap|masscan|nessus|acunetix|w3af|burp|ZmEu|paros|wget|libwww|python-urllib) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Block Common Exploit Files ──────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteRule ^(wp-admin|wp-login|wp-content|wp-includes|xmlrpc|administrator) - [F,L]
+    RewriteRule \.(asp|aspx|cgi|jsp|php)$ - [F,L]
+</IfModule>
+
+# ── File Caching (Performance + Security) ───────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# ── Compression ─────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript text/plain application/json image/svg+xml
+</IfModule>
+
+# ── Custom Error Pages ──────────────────────────────────────
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
