@@ -36,6 +36,7 @@
       <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link active">About Us</a>
       <a href="/academics" class="nav-link">Academics</a>
+      <a href="/cocurricular" class="nav-link">Co-Curricular</a>
     </nav>
 
     <a href="/" class="header-logo">
@@ -44,9 +45,9 @@
     </a>
 
     <nav class="nav-right">
-      <a href="/cocurricular" class="nav-link">Co-Curricular</a>
       <a href="/studentlife" class="nav-link">Student Life</a>
       <a href="/gallery" class="nav-link">How We Look</a>
+      <a href="/contact" class="nav-link">Contact</a>
     </nav>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -65,6 +66,7 @@
   <a href="/cocurricular">Co-Curricular</a>
   <a href="/studentlife">Student Life</a>
   <a href="/gallery">How We Look</a>
+  <a href="/contact">Contact</a>
 </div>
 
 <!-- ============================================
@@ -78,6 +80,11 @@
   </div>
 </section>
 
+<!-- Logo Watermark Overlay -->
+<div class="about-logo-watermark">
+  <img src="images/logo/kiambulogo-1.png" alt="" aria-hidden="true">
+</div>
+
 <!-- ============================================
      ABOUT US CONTENT
      ============================================ -->
@@ -86,7 +93,7 @@
     <div class="about-tabs">
       <button class="about-tab active" data-tab="history">School History</button>
       <button class="about-tab" data-tab="principal">Principal's Message</button>
-      <button class="about-tab" data-tab="board">Board of Directors</button>
+      <button class="about-tab" data-tab="board">Alumni (KHSAF)</button>
       <button class="about-tab" data-tab="vision">Vision &amp; Mission</button>
     </div>
 
@@ -105,7 +112,7 @@
         </div>
       </div>
 
-      <div class="timeline" style="margin-top: 3rem;">
+      <div class="timeline timeline-with-bg" style="margin-top: 3rem;">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div><div class="timeline-year">1968</div><div class="timeline-desc">Kiambu leaders and prominent citizens conceive the idea of a district secondary school</div></div>
@@ -150,11 +157,11 @@
       <div style="padding:2rem 0;">
         <div class="principal-grid">
           <div class="principal-photo">
-            <img src="https://placehold.co/260x260/6B1D4A/ffffff?text=Principal" alt="Principal" loading="lazy">
+            <img src="images/PRINCIPAL.png" alt="Principal Mr. Nderitu" loading="lazy">
           </div>
           <div class="principal-message">
             <p class="section-label">Principal's Message</p>
-            <h3>Mr. Robert Mukanzi</h3>
+            <h3>Mr. Nderitu</h3>
             <p>Dear students, parents, and friends of Kiambu High School,</p>
             <p>It gives me immense pleasure to welcome you to our institution — a place where academic rigour meets holistic development, and where every student is empowered to reach their fullest potential.</p>
             <div class="quote-box">
@@ -162,55 +169,72 @@
             </div>
             <p>Since taking the helm in 2023, I have witnessed the remarkable potential of our students and the dedication of our teaching staff. Our 35-acre campus, modern facilities including our semi-Olympic swimming pool, and comprehensive co-curricular programme create an environment where young men flourish academically, morally, and physically.</p>
             <p>Our 2025 KCSE results — a Mean Grade of 7.39 (B−) with 67.4% of students scoring C+ and above — reflect the hard work of our students and teachers alike. I invite you to explore our website and discover what makes Kiambu High School truly special.</p>
-            <p class="principal-signature">Robert Mukanzi</p>
+            <p class="principal-signature">Mr. Nderitu</p>
             <p class="principal-title">Principal, Kiambu High School</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Board Panel -->
+    <!-- Alumni Panel -->
     <div class="about-panel" id="panel-board">
-      <div style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
-        <div class="principal-photo" style="margin: 0 auto 1.5rem;">
-          <img src="https://placehold.co/260x260/6B1D4A/ffffff?text=Chairperson" alt="Board Chairperson" loading="lazy">
+      <div class="alumni-section">
+        <div class="alumni-intro">
+          <p class="section-label">Kiambu High School Alumni Foundation</p>
+          <h3 style="margin-bottom: 1rem;">KHSAF — Stronger Together</h3>
+          <p>The Kiambu High School Alumni Foundation (KHSAF) was born in 1976, just five years after the school opened its doors. What started as a simple desire to stay connected has grown into one of Kenya's most active school alumni networks — a brotherhood united by the motto <strong>"Faith and Work."</strong></p>
+          <p>In 2023, the association underwent a significant transformation — rebranding from the Kiambu High School Old Boys Association (KHSOBA) to the Kiambu High School Alumni Foundation (KHSAF), reflecting a forward-looking vision of philanthropy, mentorship, and institutional development.</p>
         </div>
-        <p class="section-label">Board Chairperson's Message</p>
-        <h3 style="margin-bottom: 1rem;">Dr. Grace Wanjiku Muthoni</h3>
-        <p>The Board of Directors is committed to providing strategic leadership that ensures Kiambu High School remains at the forefront of educational excellence in Kenya. We believe in transparent governance, community engagement, and investing in the future of our learners.</p>
-      </div>
 
-      <h3 class="text-center" style="margin-bottom: 0.5rem;">Board Members</h3>
-      <div class="board-grid">
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Dr. Grace W. Muthoni</h4>
-          <p class="board-title">Chairperson</p>
+        <div class="alumni-cards">
+          <div class="alumni-card">
+            <h4>🎯 Our Vision</h4>
+            <p>To be the leading alumni foundation in Kenya, driving educational excellence and community development through active engagement and philanthropy.</p>
+          </div>
+          <div class="alumni-card">
+            <h4>🤝 Our Mission</h4>
+            <p>To connect, support, and empower Kiambu High School alumni while fostering a culture of giving back — mentoring current students, funding infrastructure, and upholding the values of Faith and Work.</p>
+          </div>
         </div>
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/8B2D5E/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Mr. Peter Kamau</h4>
-          <p class="board-title">Vice Chairperson</p>
+
+        <div class="alumni-trustees">
+          <h3>Board of Trustees</h3>
+          <div class="trustees-grid">
+            <div class="trustee-card">
+              <div class="trustee-icon">WG</div>
+              <h4>Mr. Wilfred Gichina</h4>
+              <p>Chairman</p>
+            </div>
+            <div class="trustee-card">
+              <div class="trustee-icon">IM</div>
+              <h4>Mr. Ichangai Muiruri</h4>
+              <p>Vice Chairman</p>
+            </div>
+            <div class="trustee-card">
+              <div class="trustee-icon">LK</div>
+              <h4>Mr. Lawrence Kaminja</h4>
+              <p>Treasurer</p>
+            </div>
+            <div class="trustee-card">
+              <div class="trustee-icon">GK</div>
+              <h4>Mr. George Kinyanjui</h4>
+              <p>Secretary</p>
+            </div>
+            <div class="trustee-card">
+              <div class="trustee-icon">SM</div>
+              <h4>Eng. Simon Muigai</h4>
+              <p>Board Member</p>
+            </div>
+            <div class="trustee-card">
+              <div class="trustee-icon">OM</div>
+              <h4>Mr. Oliver Manyasi</h4>
+              <p>Board Member</p>
+            </div>
+          </div>
         </div>
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Mrs. Faith Njeri</h4>
-          <p class="board-title">Secretary</p>
-        </div>
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/2a5c8a/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Mr. David Ochieng</h4>
-          <p class="board-title">Treasurer</p>
-        </div>
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/8a2a2a/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Prof. Samuel Gitau</h4>
-          <p class="board-title">Member</p>
-        </div>
-        <div class="board-card">
-          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-          <h4>Mrs. Agnes Wairimu</h4>
-          <p class="board-title">Member</p>
+
+        <div class="alumni-cta">
+          <a href="https://www.khsaf.org/" target="_blank" rel="noopener" class="btn btn-gold">Visit KHSAF Website →</a>
         </div>
       </div>
     </div>
@@ -301,7 +325,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Kiambu High School. All Rights Reserved.</span>
-      <span class="powered">Powered by Excellence</span>
+      <span class="powered">Powered by Excellence | Designed by CurveStorne</span>
     </div>
   </div>
 </footer>

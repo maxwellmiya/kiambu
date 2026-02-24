@@ -36,6 +36,7 @@
       <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link">About Us</a>
       <a href="/academics" class="nav-link active">Academics</a>
+      <a href="/cocurricular" class="nav-link">Co-Curricular</a>
     </nav>
 
     <a href="/" class="header-logo">
@@ -44,9 +45,9 @@
     </a>
 
     <nav class="nav-right">
-      <a href="/cocurricular" class="nav-link">Co-Curricular</a>
       <a href="/studentlife" class="nav-link">Student Life</a>
       <a href="/gallery" class="nav-link">How We Look</a>
+      <a href="/contact" class="nav-link">Contact</a>
     </nav>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -65,14 +66,47 @@
   <a href="/cocurricular">Co-Curricular</a>
   <a href="/studentlife">Student Life</a>
   <a href="/gallery">How We Look</a>
+  <a href="/contact">Contact</a>
 </div>
 
 <!-- Page Hero -->
-<section class="page-hero">
+<section class="page-hero page-hero--has-bg" style="background-image: url('images/TEACHING_STAFF.png');">
   <div class="page-hero-content">
     <p class="section-label">Academic Excellence</p>
     <h1>Academics</h1>
     <p class="hero-sub">World-class teaching, modern facilities, and a legacy of outstanding results</p>
+  </div>
+</section>
+
+<!-- Deputy Principals -->
+<section class="deputy-section">
+  <div class="container text-center">
+    <p class="section-label reveal">School Leadership</p>
+    <h2 class="section-title section-title-center reveal">Deputy Principals' Messages</h2>
+  </div>
+  <div class="container">
+    <div class="deputy-grid">
+      <div class="deputy-card reveal">
+        <div class="deputy-photo">
+          <img src="images/DEPUTY_PRINCIPAL_ACADEMICS.png" alt="Mr. Samuel Kamau — Deputy Principal Academics" loading="lazy">
+        </div>
+        <h4>Mr. Samuel Kamau</h4>
+        <p class="deputy-title">Deputy Principal — Academics</p>
+        <div class="quote-box">
+          "Academic excellence is the cornerstone of Kiambu High School. Our dedicated team of educators ensures that every student receives the support and challenge they need to reach their full potential. With seven streams delivering quality instruction across STEM, Social Sciences, and Arts pathways, we are preparing our boys for success in Kenya's Competency-Based Curriculum and beyond."
+        </div>
+      </div>
+      <div class="deputy-card reveal reveal-delay-1">
+        <div class="deputy-photo">
+          <img src="images/DEPUTY_PRINCIPAL_ADMINISTRATION.png" alt="Mr. Nicholas Maina — Deputy Principal Administration" loading="lazy">
+        </div>
+        <h4>Mr. Nicholas Maina</h4>
+        <p class="deputy-title">Deputy Principal — Administration</p>
+        <div class="quote-box">
+          "A well-administered school is the foundation upon which academic achievement is built. From our modern dormitories to our 35-acre campus infrastructure, we ensure that every aspect of student welfare is taken care of — so our boys can focus on what matters most: learning, growing, and becoming men of integrity."
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -146,54 +180,70 @@
 
     <!-- Departments Panel -->
     <div class="academics-panel" id="acad-departments">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <p class="section-label">Competency-Based Education</p>
+        <h3>Our Academic Pathways</h3>
+        <p style="max-width: 600px; margin: 0.5rem auto 0; color: #7A6470;">Three specialised pathways delivering Kenya's CBC curriculum, supported by dedicated faculty and modern facilities</p>
+      </div>
       <div class="departments-grid">
-        <div class="dept-card" style="--dept-color: #8B2D5E;">
-          <div class="dept-icon" style="background: rgba(107,29,74,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8B2D5E" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <!-- STEM Pathway -->
+        <div class="pathway-dept-card">
+          <div class="pathway-dept-bg" style="background-image: url('images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg');"></div>
+          <div class="pathway-dept-overlay"></div>
+          <div class="pathway-dept-content">
+            <span class="pathway-dept-number">01</span>
+            <h4>STEM Pathway</h4>
+            <p class="pathway-dept-sub">Science, Technology, Engineering & Mathematics</p>
+            <p>Pure Sciences (Biology, Chemistry, Physics), Applied Sciences, Computer Studies, Agriculture, and Technical subjects including Power Mechanics. Fully equipped modern laboratories and an ICT centre with broadband connectivity.</p>
+            <div class="pathway-dept-subjects">
+              <span>Physics</span>
+              <span>Chemistry</span>
+              <span>Biology</span>
+              <span>Mathematics</span>
+              <span>Computer Studies</span>
+              <span>Agriculture</span>
+              <span>Power Mechanics</span>
+            </div>
           </div>
-          <h4>Sciences</h4>
-          <p class="dept-meta">Head: Dr. Patrick Otieno &bull; 14 Teachers</p>
-          <p>Biology, Chemistry, Physics, and Environmental Science. Fully equipped modern laboratories.</p>
         </div>
-        <div class="dept-card" style="--dept-color: #8B2D5E;">
-          <div class="dept-icon" style="background: rgba(107,29,74,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8B2D5E" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <!-- Social Sciences Pathway -->
+        <div class="pathway-dept-card">
+          <div class="pathway-dept-bg" style="background-image: url('images/gallery/academics/FORM 3A - MR. WAIGANJO.jpg');"></div>
+          <div class="pathway-dept-overlay"></div>
+          <div class="pathway-dept-content">
+            <span class="pathway-dept-number">02</span>
+            <h4>Social Sciences Pathway</h4>
+            <p class="pathway-dept-sub">Languages, Humanities & Business Studies</p>
+            <p>Preparing future lawyers, economists, public servants, and diplomats. Comprehensive curriculum covering English, Kiswahili, French, History, Geography, Religious Education, Business Studies, and Economics. Strong debating and Model UN culture.</p>
+            <div class="pathway-dept-subjects">
+              <span>English</span>
+              <span>Kiswahili</span>
+              <span>History</span>
+              <span>Geography</span>
+              <span>Business Studies</span>
+              <span>CRE</span>
+              <span>French</span>
+            </div>
           </div>
-          <h4>Mathematics</h4>
-          <p class="dept-meta">Head: Mr. Bernard Kimani &bull; 10 Teachers</p>
-          <p>Pure Mathematics, Applied Mathematics, and Statistics. Nurturing analytical thinkers.</p>
         </div>
-        <div class="dept-card" style="--dept-color: #2a5c8a;">
-          <div class="dept-icon" style="background: rgba(42,92,138,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2a5c8a" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <!-- Arts & Sports Pathway -->
+        <div class="pathway-dept-card">
+          <div class="pathway-dept-bg" style="background-image: url('images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO.jpg');"></div>
+          <div class="pathway-dept-overlay"></div>
+          <div class="pathway-dept-content">
+            <span class="pathway-dept-number">03</span>
+            <h4>Arts & Sports Pathway</h4>
+            <p class="pathway-dept-sub">Music, Drama, Fine Art, PE & Sports Science</p>
+            <p>For students passionate about creative and athletic pursuits. Award-winning music department (5× national choir champions), active drama club with national festival participation, fine art exhibitions, and a semi-Olympic swimming pool. Home Science also offered.</p>
+            <div class="pathway-dept-subjects">
+              <span>Music</span>
+              <span>Drama</span>
+              <span>Fine Art</span>
+              <span>PE</span>
+              <span>Home Science</span>
+              <span>Sports Science</span>
+            </div>
           </div>
-          <h4>Languages</h4>
-          <p class="dept-meta">Head: Mrs. Mary Wangari &bull; 12 Teachers</p>
-          <p>English, Kiswahili, French, and Literature. Building confident communicators.</p>
-        </div>
-        <div class="dept-card" style="--dept-color: #2a5c8a;">
-          <div class="dept-icon" style="background: rgba(42,92,138,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2a5c8a" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h4>Humanities</h4>
-          <p class="dept-meta">Head: Ms. Jane Akinyi &bull; 10 Teachers</p>
-          <p>History, Geography, Religious Education, and Business Studies. Understanding our world.</p>
-        </div>
-        <div class="dept-card" style="--dept-color: #8B2D5E;">
-          <div class="dept-icon" style="background: rgba(107,29,74,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8B2D5E" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h4>Technical</h4>
-          <p class="dept-meta">Head: Mr. Daniel Njoroge &bull; 8 Teachers</p>
-          <p>Computer Studies, Agriculture, Home Science, and Engineering Technology.</p>
-        </div>
-        <div class="dept-card" style="--dept-color: #8a2a2a;">
-          <div class="dept-icon" style="background: rgba(138,42,42,0.12);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8a2a2a" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-          </div>
-          <h4>Creative Arts</h4>
-          <p class="dept-meta">Head: Mrs. Rose Waithera &bull; 6 Teachers</p>
-          <p>Music, Fine Art, Drama, and Physical Education. Nurturing creativity and talent.</p>
         </div>
       </div>
     </div>
@@ -358,7 +408,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Kiambu High School. All Rights Reserved.</span>
-      <span class="powered">Powered by Excellence</span>
+      <span class="powered">Powered by Excellence | Designed by CurveStorne</span>
     </div>
   </div>
 </footer>
