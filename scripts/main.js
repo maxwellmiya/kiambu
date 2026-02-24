@@ -419,4 +419,30 @@
   // Initial trigger
   triggerReveals();
 
+  // ── Inspiration Carousel ──────────────────────────
+  const inspireSlides = document.querySelectorAll('.inspire-slide');
+  const inspireDots = document.querySelectorAll('.inspire-dot');
+  if (inspireSlides.length > 0) {
+    let inspireIndex = 0;
+    const inspireCount = inspireSlides.length;
+
+    function showInspireSlide(idx) {
+      inspireSlides.forEach(s => s.classList.remove('active'));
+      inspireDots.forEach(d => d.classList.remove('active'));
+      inspireSlides[idx].classList.add('active');
+      if (inspireDots[idx]) inspireDots[idx].classList.add('active');
+      inspireIndex = idx;
+    }
+
+    inspireDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showInspireSlide(parseInt(dot.dataset.inspireDot));
+      });
+    });
+
+    setInterval(() => {
+      showInspireSlide((inspireIndex + 1) % inspireCount);
+    }, 5000);
+  }
+
 })();
