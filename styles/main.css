@@ -1035,6 +1035,28 @@ p { margin-bottom: 1rem; }
 }
 
 /* ============================================
+   12a. HERO SLIDE 4 — TEXT-ONLY (No Image)
+   ============================================ */
+.hero-slide-bg--gradient {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 45%, var(--primary-light) 100%) !important;
+}
+
+.hero-slide-bg--gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 50%, rgba(200, 151, 42, 0.15) 0%, transparent 55%),
+              radial-gradient(ellipse at 75% 40%, rgba(139, 45, 94, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-slide--text-only .hero-content {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ============================================
    12b. INSPIRATION CAROUSEL (Text-only)
    ============================================ */
 .inspire-carousel {
