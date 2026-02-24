@@ -359,11 +359,11 @@ p { margin-bottom: 1rem; }
 .nav-link {
   color: var(--white);
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.5rem 1.1rem;
   position: relative;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 1px 4px rgba(0,0,0,0.6), 0 0 12px rgba(0,0,0,0.3);
@@ -585,17 +585,19 @@ p { margin-bottom: 1rem; }
 .hero-content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  transform: translateY(-50%);
   z-index: 5;
-  text-align: center;
+  text-align: left;
   width: 90%;
-  max-width: 900px;
-  background: rgba(26, 13, 22, 0.45);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  padding: 3rem 2.5rem;
-  border-radius: var(--radius);
+  max-width: 700px;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0 2rem;
+  margin-left: calc((100% - 1400px) / 2);
+  padding-left: 2rem;
+  border-radius: 0;
 }
 
 .hero-tag {
@@ -603,6 +605,7 @@ p { margin-bottom: 1rem; }
   font-style: italic;
   font-size: clamp(1rem, 2vw, 1.3rem);
   color: var(--secondary);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
   margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(20px);
@@ -619,13 +622,14 @@ p { margin-bottom: 1rem; }
   opacity: 0;
   transform: translateY(30px);
   animation: heroFadeUp 0.8s 0.5s forwards;
-  text-shadow: 0 2px 30px rgba(0,0,0,0.6), 0 1px 6px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.8), 0 1px 8px rgba(0,0,0,0.6), 0 0 60px rgba(0,0,0,0.4);
 }
 
 .hero-sub {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.5);
   margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(20px);
@@ -638,7 +642,7 @@ p { margin-bottom: 1rem; }
   animation: heroFadeUp 0.8s 0.9s forwards;
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -1054,6 +1058,7 @@ p { margin-bottom: 1rem; }
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  text-align: left;
 }
 
 /* ============================================
@@ -2807,13 +2812,15 @@ p { margin-bottom: 1rem; }
    22. RESPONSIVE
    ============================================ */
 @media (max-width: 1280px) {
-  .nav-link { font-size: 0.82rem; padding: 0.5rem 0.7rem; }
+  .nav-link { font-size: 0.92rem; padding: 0.5rem 0.8rem; }
+  .hero-content { margin-left: 0; padding-left: 2rem; }
 }
 
 @media (max-width: 1024px) {
   .nav-left, .nav-right, .nav-search-btn { display: none; }
   .hamburger { display: flex; }
   .header-inner { justify-content: flex-start; }
+  .hero-content { margin-left: 0; padding-left: 2rem; max-width: 600px; }
 
   .pathway-cards { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
