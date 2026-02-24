@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Kiambu High School's rich history, leadership, vision, and mission. Founded in 1971, we have been shaping leaders for over five decades.">
+  <title>About Us — Kiambu High School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="pageLoader">
+  <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="loader-logo-img">
+</div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Header -->
+<header class="header transparent" id="mainHeader">
+  <div class="header-inner">
+    <nav class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="academics.html" class="nav-link">Academics</a>
+    </nav>
+
+    <a href="index.html" class="header-logo">
+      <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="header-logo-img">
+      <span class="header-logo-text">Kiambu High School</span>
+    </a>
+
+    <nav class="nav-right">
+      <a href="cocurricular.html" class="nav-link">Co-Curricular</a>
+      <a href="studentlife.html" class="nav-link">Student Life</a>
+      <a href="gallery.html" class="nav-link">How We Look</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="academics.html">Academics</a>
+  <a href="cocurricular.html">Co-Curricular</a>
+  <a href="studentlife.html">Student Life</a>
+  <a href="gallery.html">How We Look</a>
+</div>
+
+<!-- ============================================
+     PAGE HERO BANNER
+     ============================================ -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <p class="section-label">Discover Our Heritage</p>
+    <h1>About Kiambu High School</h1>
+    <p class="hero-sub">Over five decades of shaping leaders, scholars, and change-makers</p>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT US CONTENT
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="about-tabs">
+      <button class="about-tab active" data-tab="history">School History</button>
+      <button class="about-tab" data-tab="principal">Principal's Message</button>
+      <button class="about-tab" data-tab="board">Board of Directors</button>
+      <button class="about-tab" data-tab="vision">Vision &amp; Mission</button>
+    </div>
+
+    <!-- History Panel -->
+    <div class="about-panel active" id="panel-history">
+      <div class="history-content">
+        <div>
+          <p class="history-pullquote">"From humble beginnings to a beacon of excellence — Kiambu High School has shaped generations of leaders, scholars, and change-makers."</p>
+          <p>The idea of Kiambu High School was conceived in 1968 by a group of Kiambu leaders and prominent citizens who recognised the need for a quality boys' secondary school in the district. The school was formally established in 1971, opening its doors with the first cohort of students on its 35-acre campus in Kiambu County. Built under the Open Plan System with Canadian development assistance, the school's distinctive architecture set it apart from the outset.</p>
+          <p>Initially a mixed school, Kiambu High School was converted to an all-boys institution in 1993. Our journey is a testament to the enduring spirit of our motto — <em>Faith and Work</em>. Over five decades, the school has grown into one of Kenya's respected Extra-County boarding schools, producing graduates who serve with distinction across every field of human endeavour.</p>
+        </div>
+        <div>
+          <div style="width:100%;height:300px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;">
+            <img src="https://placehold.co/500x300/6B1D4A/ffffff?text=School+Heritage" alt="School Heritage" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top: 3rem;">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">1968</div><div class="timeline-desc">Kiambu leaders and prominent citizens conceive the idea of a district secondary school</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">1971</div><div class="timeline-desc">Kiambu High School opens on a 35-acre campus, built under the Open Plan System with Canadian assistance</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">1975</div><div class="timeline-desc">First cohort sits for the Kenya Certificate of Education (KCE)</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">1993</div><div class="timeline-desc">School converted from mixed to an all-boys institution</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">2012</div><div class="timeline-desc">Construction of the ESP hostel — expanding boarding capacity</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">2018</div><div class="timeline-desc">Semi-Olympic swimming pool launched — a first among Kiambu County schools</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">2019</div><div class="timeline-desc">New dormitory block completed, bringing total to 13 houses named after famous mountains</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">2023</div><div class="timeline-desc">Mr. Robert Mukanzi appointed Principal; Competency-Based Curriculum pathways launched</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div><div class="timeline-year">2025</div><div class="timeline-desc">KCSE 2025 — 402 candidates achieve Mean Grade 7.39 (B−), continuing upward trajectory</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Principal's Panel -->
+    <div class="about-panel" id="panel-principal">
+      <div style="padding:2rem 0;">
+        <div class="principal-grid">
+          <div class="principal-photo">
+            <img src="https://placehold.co/260x260/6B1D4A/ffffff?text=Principal" alt="Principal" loading="lazy">
+          </div>
+          <div class="principal-message">
+            <p class="section-label">Principal's Message</p>
+            <h3>Mr. Robert Mukanzi</h3>
+            <p>Dear students, parents, and friends of Kiambu High School,</p>
+            <p>It gives me immense pleasure to welcome you to our institution — a place where academic rigour meets holistic development, and where every student is empowered to reach their fullest potential.</p>
+            <div class="quote-box">
+              "Excellence is not a destination but a journey we undertake together. At Kiambu High School, we walk this path with faith and purpose, committed to each student's success."
+            </div>
+            <p>Since taking the helm in 2023, I have witnessed the remarkable potential of our students and the dedication of our teaching staff. Our 35-acre campus, modern facilities including our semi-Olympic swimming pool, and comprehensive co-curricular programme create an environment where young men flourish academically, morally, and physically.</p>
+            <p>Our 2025 KCSE results — a Mean Grade of 7.39 (B−) with 67.4% of students scoring C+ and above — reflect the hard work of our students and teachers alike. I invite you to explore our website and discover what makes Kiambu High School truly special.</p>
+            <p class="principal-signature">Robert Mukanzi</p>
+            <p class="principal-title">Principal, Kiambu High School</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board Panel -->
+    <div class="about-panel" id="panel-board">
+      <div style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+        <div class="principal-photo" style="margin: 0 auto 1.5rem;">
+          <img src="https://placehold.co/260x260/6B1D4A/ffffff?text=Chairperson" alt="Board Chairperson" loading="lazy">
+        </div>
+        <p class="section-label">Board Chairperson's Message</p>
+        <h3 style="margin-bottom: 1rem;">Dr. Grace Wanjiku Muthoni</h3>
+        <p>The Board of Directors is committed to providing strategic leadership that ensures Kiambu High School remains at the forefront of educational excellence in Kenya. We believe in transparent governance, community engagement, and investing in the future of our learners.</p>
+      </div>
+
+      <h3 class="text-center" style="margin-bottom: 0.5rem;">Board Members</h3>
+      <div class="board-grid">
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Dr. Grace W. Muthoni</h4>
+          <p class="board-title">Chairperson</p>
+        </div>
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/8B2D5E/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Mr. Peter Kamau</h4>
+          <p class="board-title">Vice Chairperson</p>
+        </div>
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Mrs. Faith Njeri</h4>
+          <p class="board-title">Secretary</p>
+        </div>
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/2a5c8a/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Mr. David Ochieng</h4>
+          <p class="board-title">Treasurer</p>
+        </div>
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/8a2a2a/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Prof. Samuel Gitau</h4>
+          <p class="board-title">Member</p>
+        </div>
+        <div class="board-card">
+          <div class="board-photo"><img src="https://placehold.co/100x100/6B1D4A/ffffff?text=BM" alt="Board Member" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+          <h4>Mrs. Agnes Wairimu</h4>
+          <p class="board-title">Member</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision Panel -->
+    <div class="about-panel" id="panel-vision">
+      <div class="vision-mission">
+        <p class="section-label text-center">Our Purpose</p>
+        <h3 class="text-center" style="margin-bottom: 2rem;">Vision</h3>
+        <p class="vision-text">"To be a Centre of Excellence producing holistic, globally competitive graduates."</p>
+
+        <h3 class="text-center" style="margin-bottom: 1.5rem;">Mission</h3>
+        <div class="mission-card">
+          <p style="margin:0;">To provide quality, inclusive education that develops the intellectual, moral, physical, and social potential of every learner through competent teaching, modern facilities, and a culture of discipline and innovation — preparing them for responsible citizenship and lifelong success.</p>
+        </div>
+
+        <h3 class="text-center" style="margin-bottom: 1rem;">Core Values</h3>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Integrity</h4>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4>Excellence</h4>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h4>Innovation</h4>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Ubuntu</h4>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <h4>Discipline</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="mainFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="footer-logo-img">
+        </div>
+        <p class="footer-tagline">Faith and Work</p>
+        <p>Faith and Work. Shaping tomorrow's leaders since 1971 in the heart of Kiambu County, Kenya.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#1A0D16"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="https://www.khsaf.org/" target="_blank" rel="noopener">Alumni (KHSAF)</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="cocurricular.html">Co-Curricular</a>
+        <a href="studentlife.html">Student Life</a>
+        <a href="gallery.html">How We Look</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> P.O. Box 123-00900, Kiambu, Kenya</p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +254 700 000 000</p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@kiambuhigh.sc.ke</p>
+        <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mon – Fri: 7:00 AM – 5:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kiambu High School. All Rights Reserved.</span>
+      <span class="powered">Powered by Excellence</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

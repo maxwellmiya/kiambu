@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kiambu High School — A boys' boarding school of excellence since 1971. Shaping tomorrow's leaders through academic rigour, character development, and holistic education in Kiambu County, Kenya. Motto: Faith and Work.">
+  <meta name="keywords" content="Kiambu High School, Kenya secondary school, KCSE, boarding school, education, Kiambu County">
+  <title>Kiambu High School — Faith and Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="pageLoader">
+  <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="loader-logo-img">
+</div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Header -->
+<header class="header transparent" id="mainHeader">
+  <div class="header-inner">
+    <nav class="nav-left">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="academics.html" class="nav-link">Academics</a>
+    </nav>
+
+    <a href="index.html" class="header-logo">
+      <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="header-logo-img">
+      <span class="header-logo-text">Kiambu High School</span>
+    </a>
+
+    <nav class="nav-right">
+      <a href="cocurricular.html" class="nav-link">Co-Curricular</a>
+      <a href="studentlife.html" class="nav-link">Student Life</a>
+      <a href="gallery.html" class="nav-link">How We Look</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="academics.html">Academics</a>
+  <a href="cocurricular.html">Co-Curricular</a>
+  <a href="studentlife.html">Student Life</a>
+  <a href="gallery.html">How We Look</a>
+</div>
+
+<!-- ============================================
+     HOME PAGE CONTENT
+     ============================================ -->
+
+<!-- Hero Carousel -->
+<section class="hero" id="heroCarousel">
+  <!-- Slide 1 -->
+  <div class="hero-slide active" data-slide="0">
+    <div class="hero-slide-bg" style="background-image: url('images/carousel/new logo launch.jpg');"></div>
+    <div class="hero-slide-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Faith and Work — Imani na Kazi</p>
+      <h1 class="hero-heading">Shaping Tomorrow's Leaders</h1>
+      <p class="hero-sub">Kiambu High School — A Boys' Boarding School of Excellence Since 1971</p>
+      <div class="hero-cta">
+        <a href="about.html" class="btn btn-gold">Discover Our Story</a>
+        <a href="gallery.html" class="btn btn-outline">Take a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="hero-slide" data-slide="1">
+    <div class="hero-slide-bg" style="background-image: url('images/carousel/new logo admin.jpg');"></div>
+    <div class="hero-slide-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Where Science Meets Ambition</p>
+      <h1 class="hero-heading">Curiosity. Innovation. Discovery.</h1>
+      <p class="hero-sub">World-class laboratories, passionate educators, and a legacy of academic excellence</p>
+      <div class="hero-cta">
+        <a href="academics.html" class="btn btn-gold">Explore Academics</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="hero-slide" data-slide="2">
+    <div class="hero-slide-bg" style="background-image: url('images/carousel/new logo with pp.jpg');"></div>
+    <div class="hero-slide-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Arts, Sports &amp; Creative Excellence</p>
+      <h1 class="hero-heading">Your Passion. Your Future.</h1>
+      <p class="hero-sub">Nurturing talent, building character, and celebrating excellence beyond the classroom</p>
+      <div class="hero-cta">
+        <a href="cocurricular.html" class="btn btn-gold">Co-Curricular Life</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Previous slide">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Next slide">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="carousel-dots" id="carouselDots">
+    <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<!-- Announcement Ticker -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item">🏆 KCSE 2025 Results: Mean Grade 7.39 — 271 students scored C+ and above</span>
+    <span class="ticker-item">📅 Open Day: March 15th, 2026</span>
+    <span class="ticker-item">🎓 Form One Admissions Now Open</span>
+    <span class="ticker-item">⚽ Regional Football Champions 2025</span>
+    <span class="ticker-item">📚 Semi-Olympic Swimming Pool — Operational</span>
+    <span class="ticker-item">🎭 Drama Festival — National Qualifiers</span>
+    <span class="ticker-item">🏆 KCSE 2025 Results: Mean Grade 7.39 — 271 students scored C+ and above</span>
+    <span class="ticker-item">📅 Open Day: March 15th, 2026</span>
+    <span class="ticker-item">🎓 Form One Admissions Now Open</span>
+    <span class="ticker-item">⚽ Regional Football Champions 2025</span>
+    <span class="ticker-item">📚 Semi-Olympic Swimming Pool — Operational</span>
+    <span class="ticker-item">🎭 Drama Festival — National Qualifiers</span>
+  </div>
+</div>
+
+<!-- Pathways Section -->
+<section class="pathways-section section" id="pathways">
+  <div class="container text-center">
+    <p class="section-label reveal">Competency-Based Education</p>
+    <h2 class="section-title section-title-center reveal">Our Academic Pathways</h2>
+    <p class="section-subtitle reveal" style="margin: 0 auto 1rem;">Kenya's Competency-Based Education curriculum, expertly delivered</p>
+  </div>
+
+  <div class="container">
+    <div class="pathway-cards">
+      <!-- STEM -->
+      <div class="pathway-card reveal" style="--card-color: #6B1D4A;">
+        <div class="pathway-bg" style="background-image: url('https://placehold.co/600x400/6B1D4A/ffffff?text=STEM');"></div>
+        <div class="pathway-overlay"></div>
+        <div class="pathway-content">
+          <span class="pathway-number">01</span>
+          <h3>STEM</h3>
+          <p class="pathway-sub">Science, Technology, Engineering &amp; Mathematics</p>
+          <p class="pathway-desc">Pure Sciences (Biology, Chemistry, Physics), Applied Sciences, and Technical Studies. Building Kenya's next generation of innovators, engineers, and researchers.</p>
+          <div class="pathway-tags">
+            <span class="pathway-tag">Pure Sciences</span>
+            <span class="pathway-tag">Applied Sciences</span>
+            <span class="pathway-tag">Technical Studies</span>
+          </div>
+          <a href="academics.html" class="pathway-link">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Social Sciences -->
+      <div class="pathway-card reveal reveal-delay-1" style="--card-color: #2a5c8a;">
+        <div class="pathway-bg" style="background-image: url('https://placehold.co/600x400/2a5c8a/ffffff?text=Social+Sciences');"></div>
+        <div class="pathway-overlay"></div>
+        <div class="pathway-content">
+          <span class="pathway-number">02</span>
+          <h3>Social Sciences</h3>
+          <p class="pathway-sub">Languages, Literature, Humanities &amp; Business Studies</p>
+          <p class="pathway-desc">Preparing future lawyers, economists, public servants, and diplomats. Curriculum covering Kiswahili, English, History, Geography, Business, and Economics.</p>
+          <div class="pathway-tags">
+            <span class="pathway-tag">Languages</span>
+            <span class="pathway-tag">Business Studies</span>
+            <span class="pathway-tag">Humanities</span>
+          </div>
+          <a href="academics.html" class="pathway-link">Learn More <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Arts & Sports -->
+      <div class="pathway-card reveal reveal-delay-2" style="--card-color: #8a2a2a;">
+        <div class="pathway-bg" style="background-image: url('https://placehold.co/600x400/8a2a2a/ffffff?text=Arts+%26+Sports');"></div>
+        <div class="pathway-overlay"></div>
+        <div class="pathway-content">
+          <span class="pathway-number">03</span>
+          <h3>Arts &amp; Sports</h3>
+          <p class="pathway-sub">Music, Dance, Theatre, Film, Fine Art &amp; Sports Science</p>
+          <p class="pathway-desc">For students passionate about creative and athletic pursuits. Nurturing Kenya's future performers, artists, filmmakers, and sports professionals.</p>
+          <div class="pathway-tags">
+            <span class="pathway-tag">Music &amp; Dance</span>
+            <span class="pathway-tag">Fine Art</span>
+            <span class="pathway-tag">Sports Science</span>
+          </div>
+          <a href="cocurricular.html" class="pathway-link">Learn More <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<!-- Quick Stats -->
+<section class="stats-section" id="statsSection">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="1600">0</div>
+        <div class="stat-label">Students</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number" data-target="80">0</div>
+        <div class="stat-label">Qualified Teachers</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number" data-target="55">0</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number" data-target="67">0</div>
+        <div class="stat-label">% C+ &amp; Above (2025)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest News -->
+<section class="news-section section" id="newsSection">
+  <div class="container text-center">
+    <p class="section-label reveal">Stay Informed</p>
+    <h2 class="section-title section-title-center reveal">Latest News &amp; Notices</h2>
+  </div>
+  <div class="container">
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-card-img">
+          <img src="https://placehold.co/600x400/6B1D4A/ffffff?text=KCSE+2025+Results" alt="KCSE 2025 Results" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <p class="news-card-date">February 10, 2026</p>
+          <h4>KCSE 2025 Provisional Results Released</h4>
+          <p>402 candidates sat the exam with a Mean Grade of 7.39 (B−). 271 students (67.4%) scored C+ and above, marking steady improvement year-on-year.</p>
+          <a href="academics.html" class="news-card-link">Full Results →</a>
+        </div>
+      </div>
+      <div class="news-card reveal reveal-delay-1">
+        <div class="news-card-img">
+          <img src="https://placehold.co/600x400/8B2D5E/ffffff?text=Open+Day+2026" alt="Open Day 2026" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <p class="news-card-date">March 1, 2026</p>
+          <h4>Annual Open Day — March 15th</h4>
+          <p>Parents and prospective students are invited to experience Kiambu High firsthand. Tour our 35-acre campus, meet teachers, and discover what makes us exceptional.</p>
+          <a href="about.html" class="news-card-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="news-card reveal reveal-delay-2">
+        <div class="news-card-img">
+          <img src="https://placehold.co/600x400/6B1D4A/ffffff?text=Swimming+Pool" alt="Swimming Pool" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <p class="news-card-date">January 20, 2026</p>
+          <h4>Semi-Olympic Swimming Pool Upgraded</h4>
+          <p>Our semi-Olympic swimming pool, launched in 2018, now features modern timing systems and enhanced training facilities for competitive swimming.</p>
+          <a href="cocurricular.html" class="news-card-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<!-- Footer -->
+<footer class="footer" id="mainFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo/kiambulogo-1.png" alt="Kiambu High School Logo" class="footer-logo-img">
+        </div>
+        <p class="footer-tagline">Faith and Work</p>
+        <p>Faith and Work. Shaping tomorrow's leaders since 1971 in the heart of Kiambu County, Kenya.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#1A0D16"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="https://www.khsaf.org/" target="_blank" rel="noopener">Alumni (KHSAF)</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="cocurricular.html">Co-Curricular</a>
+        <a href="studentlife.html">Student Life</a>
+        <a href="gallery.html">How We Look</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          P.O. Box 123-00900, Kiambu, Kenya
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +254 700 000 000
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@kiambuhigh.sc.ke
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon – Fri: 7:00 AM – 5:00 PM
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kiambu High School. All Rights Reserved.</span>
+      <span class="powered">Powered by Excellence</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
