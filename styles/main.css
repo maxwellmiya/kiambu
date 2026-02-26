@@ -3015,7 +3015,7 @@ p { margin-bottom: 1rem; }
 
 .deputy-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   margin-top: 2rem;
 }
@@ -3025,11 +3025,10 @@ p { margin-bottom: 1rem; }
   border-radius: var(--radius);
   padding: 0;
   box-shadow: 0 8px 32px rgba(107, 29, 74, 0.08);
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   text-align: left;
-  align-items: stretch;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -3040,12 +3039,8 @@ p { margin-bottom: 1rem; }
 
 .deputy-photo {
   width: 100%;
-  height: 100%;
-  min-height: 340px;
-  border-radius: 0;
+  height: 340px;
   overflow: hidden;
-  margin-bottom: 0;
-  box-shadow: none;
 }
 
 .deputy-photo img {
@@ -3056,10 +3051,10 @@ p { margin-bottom: 1rem; }
 }
 
 .deputy-card-text {
-  padding: 2.5rem;
+  padding: 2rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex: 1;
 }
 
 .deputy-card h4 {
@@ -3429,8 +3424,8 @@ p { margin-bottom: 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .video-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .deputy-grid { grid-template-columns: 1fr; }
-  .deputy-card { grid-template-columns: 200px 1fr; }
+  .deputy-grid { grid-template-columns: repeat(2, 1fr); }
+  .deputy-photo { height: 280px; }
   .pathway-detail-grid { grid-template-columns: repeat(2, 1fr); }
   .alumni-cards { grid-template-columns: 1fr; }
   .trustees-grid { grid-template-columns: repeat(2, 1fr); }
@@ -3470,8 +3465,8 @@ p { margin-bottom: 1rem; }
   .gallery-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
   .trustees-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .deputy-card { grid-template-columns: 1fr; }
-  .deputy-photo { min-height: 280px; }
+  .deputy-grid { grid-template-columns: 1fr; }
+  .deputy-photo { height: 280px; }
   .pathway-detail-grid { grid-template-columns: 1fr; }
   .pathway-filter-tabs { flex-wrap: wrap; gap: 0.5rem; }
   .principal-hero { min-height: 560px; }
