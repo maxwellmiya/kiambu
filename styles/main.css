@@ -3024,11 +3024,10 @@ p { margin-bottom: 1rem; }
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  height: 420px;
+  height: 520px;
   cursor: default;
   box-shadow: 0 8px 32px rgba(107, 29, 74, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  background: #e8dde3;
 }
 
 .deputy-card:hover {
@@ -3041,8 +3040,8 @@ p { margin-bottom: 1rem; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: top center;
+  object-fit: cover;
+  object-position: center 20%;
   z-index: 0;
 }
 
@@ -3429,7 +3428,7 @@ p { margin-bottom: 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .video-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .deputy-card { height: 380px; }
+  .deputy-card { height: 480px; }
   .pathway-detail-grid { grid-template-columns: repeat(2, 1fr); }
   .alumni-cards { grid-template-columns: 1fr; }
   .trustees-grid { grid-template-columns: repeat(2, 1fr); }
@@ -3470,7 +3469,7 @@ p { margin-bottom: 1rem; }
   .trustees-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .deputy-grid { grid-template-columns: 1fr; }
-  .deputy-card { height: 360px; }
+  .deputy-card { height: 460px; }
   .pathway-detail-grid { grid-template-columns: 1fr; }
   .pathway-filter-tabs { flex-wrap: wrap; gap: 0.5rem; }
   .principal-hero { min-height: 560px; }
