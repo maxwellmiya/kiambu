@@ -49,6 +49,7 @@ RewriteRule ^index$ / [R=301,L]
         font-src 'self' https://fonts.gstatic.com; \
         img-src 'self' data: https://placehold.co; \
         connect-src 'self'; \
+        frame-src https://www.google.com; \
         frame-ancestors 'self'; \
         form-action 'self'; \
         base-uri 'self'; \
