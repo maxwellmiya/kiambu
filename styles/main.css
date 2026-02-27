@@ -1407,62 +1407,101 @@ p { margin-bottom: 1rem; }
   margin-bottom: 2rem;
 }
 
-.timeline {
+/* Timeline — Modern Horizontal Scroll */
+.timeline-modern {
   position: relative;
-  padding: 2rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--light);
 }
 
-.timeline::before {
+.timeline-modern::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline-modern::-webkit-scrollbar-track {
+  background: var(--light);
+  border-radius: 3px;
+}
+
+.timeline-modern::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 3px;
+}
+
+.timeline-track {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 0.5rem 1rem;
+  position: relative;
+  min-width: max-content;
+}
+
+.timeline-track::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--secondary), var(--primary));
+  top: 54px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--secondary), var(--primary), var(--secondary));
+  z-index: 0;
 }
 
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 2rem;
+.timeline-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  flex-shrink: 0;
 }
 
-.timeline-item:nth-child(odd) {
-  padding-right: calc(50% + 2rem);
-  text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-  padding-left: calc(50% + 2rem);
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: var(--secondary);
-  border-radius: 50%;
-  border: 3px solid var(--white);
-  box-shadow: 0 0 0 3px var(--secondary);
-  z-index: 1;
-}
-
-.timeline-year {
+.timeline-card-year {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: var(--secondary);
-  margin-bottom: 0.3rem;
+  background: var(--white);
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--secondary);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  line-height: 1.4;
 }
 
-.timeline-desc {
-  font-size: 0.95rem;
+.timeline-card-line {
+  width: 3px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--secondary), var(--primary));
+  flex-shrink: 0;
+}
+
+.timeline-card-body {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1rem;
+  box-shadow: 0 4px 20px rgba(107, 29, 74, 0.08);
+  border-top: 3px solid var(--secondary);
+  text-align: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover .timeline-card-body {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(107, 29, 74, 0.14);
+}
+
+.timeline-card-body p {
+  font-size: 0.88rem;
+  line-height: 1.6;
   color: #6B5A64;
+  margin: 0;
 }
 
 /* Quote Box (shared) */
@@ -2883,24 +2922,6 @@ p { margin-bottom: 1rem; }
   object-fit: contain;
 }
 
-/* ABOUT PAGE: Timeline Background */
-.timeline-with-bg {
-  position: relative;
-}
-
-.timeline-with-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/gallery/academics/GATE-2.jpg') center/cover no-repeat;
-  opacity: 0.06;
-  border-radius: var(--radius);
-  pointer-events: none;
-}
-
 /* ABOUT PAGE: Alumni Section */
 .alumni-section {
   padding: 2rem 0;
@@ -3483,10 +3504,9 @@ p { margin-bottom: 1rem; }
   .about-tabs, .academics-tabs, .gallery-filters { gap: 0.3rem; }
   .about-tab, .academics-tab, .gallery-filter { padding: 0.5rem 1rem; font-size: 0.8rem; }
 
-  .timeline::before { left: 15px; }
-  .timeline-item:nth-child(odd) { padding-right: 0; padding-left: calc(30px + 1rem); text-align: left; }
-  .timeline-item:nth-child(even) { padding-left: calc(30px + 1rem); }
-  .timeline-dot { left: 15px; }
+  .timeline-card { width: 170px; }
+  .timeline-card-body { padding: 1rem 0.8rem; }
+  .timeline-card-body p { font-size: 0.82rem; }
 
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }

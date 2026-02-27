@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kiambuhigh.sc.ke/sitemap.xml
