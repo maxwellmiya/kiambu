@@ -80,94 +80,405 @@
 </div>
 
 <!-- ============================================
-     STUDENT LIFE CONTENT
+     STUDENT LIFE CONTENT - MODERN REDESIGN
      ============================================ -->
 
-<!-- Page Hero -->
-<section class="page-hero page-hero--has-bg page-hero--studentlife" style="background-image: url('images/gallery/academics/ASSEMBLY.jpg');">
-  <div class="page-hero-content">
-    <span class="section-badge">🏠 Home Away from Home</span>
-    <h1>Student Life & <span class="text-gradient">Boarding</span></h1>
-    <p class="hero-sub">A boys' boarding school fostering discipline, brotherhood, and excellence since 1971</p>
-    <div class="hero-stats-row">
-      <div class="hero-stat"><span class="hero-stat-number">1,200</span><span class="hero-stat-label">Boarding Students</span></div>
-      <div class="hero-stat"><span class="hero-stat-number">13</span><span class="hero-stat-label">Mountain Houses</span></div>
-      <div class="hero-stat"><span class="hero-stat-number">35</span><span class="hero-stat-label">Acre Campus</span></div>
+<!-- Full-Screen Hero -->
+<section class="studentlife-hero">
+  <div class="studentlife-hero-bg" style="background-image: url('images/gallery/academics/ASSEMBLY.jpg');"></div>
+  <div class="studentlife-hero-overlay"></div>
+  <div class="studentlife-hero-content">
+    <p class="hero-eyebrow reveal">Experience Kiambu High School</p>
+    <h1 class="reveal">Where Young Men <span class="text-gradient">Become Leaders</span></h1>
+    <p class="hero-description reveal">A premier boys' boarding school fostering academic excellence, character development, and lifelong brotherhood on our 35-acre campus since 1971.</p>
+    <div class="hero-actions reveal">
+      <a href="/contact" class="btn btn-gold">Schedule a Visit</a>
+      <a href="#campus-life" class="btn btn-outline-light">Explore Campus Life</a>
     </div>
+  </div>
+  <div class="studentlife-hero-stats">
+    <div class="hero-stat-item reveal">
+      <span class="stat-number" data-count="1200">1,200</span>
+      <span class="stat-label">Boarding Students</span>
+    </div>
+    <div class="hero-stat-item reveal reveal-delay-1">
+      <span class="stat-number">13</span>
+      <span class="stat-label">Mountain Houses</span>
+    </div>
+    <div class="hero-stat-item reveal reveal-delay-2">
+      <span class="stat-number">35</span>
+      <span class="stat-label">Acre Campus</span>
+    </div>
+    <div class="hero-stat-item reveal reveal-delay-3">
+      <span class="stat-number">55+</span>
+      <span class="stat-label">Years of Excellence</span>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
   </div>
 </section>
 
-<!-- Boarding Head -->
-<section class="boarding-head">
+<!-- Campus Life Overview -->
+<section class="campus-overview section" id="campus-life">
   <div class="container">
-    <div class="boarding-head-content">
-      <div class="boarding-head-text">
-        <p class="section-label">From Our Boarding Master</p>
-        <h3>A Nurturing Home Environment</h3>
-        <blockquote>"At Kiambu High School, we believe that a well-rested, well-fed, and emotionally supported student is one who excels academically. Our boarding facilities are designed to be a true home away from home."</blockquote>
-        <p class="principal-name">Mr. Michael Wachira</p>
-        <p class="principal-title">Boarding Master</p>
+    <div class="campus-overview-grid">
+      <div class="campus-overview-content reveal">
+        <p class="section-label">Campus Life</p>
+        <h2 class="section-title">A Home Away From Home</h2>
+        <p class="lead-text">At Kiambu High School, we believe that a nurturing environment is essential for academic success. Our boarding community creates bonds that last a lifetime.</p>
+        <div class="campus-features">
+          <div class="campus-feature">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4>Modern Dormitories</h4>
+              <p>Well-maintained facilities with Wi-Fi, hot showers, and dedicated study areas</p>
+            </div>
+          </div>
+          <div class="campus-feature">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4>Brotherhood &amp; Community</h4>
+              <p>Strong peer mentorship and lifetime connections</p>
+            </div>
+          </div>
+          <div class="campus-feature">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4>Structured Routine</h4>
+              <p>Balanced schedule for academics, sports, and personal growth</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="boarding-head-photo">
-        <img src="https://placehold.co/350x400/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
+      <div class="campus-overview-images reveal reveal-delay-1">
+        <div class="image-stack">
+          <img src="images/gallery/school life/KHSGate5.jpg" alt="Kiambu High School Campus" class="stack-img-1" loading="lazy">
+          <img src="images/gallery/school life/ADMINISTRATION.jpg" alt="School Administration Building" class="stack-img-2" loading="lazy">
+          <div class="image-accent"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Guidance & Counselling -->
-<section class="boarding-head" style="background: var(--light);">
-  <div class="container">
-    <div class="boarding-head-content" style="flex-direction: row-reverse;">
-      <div class="boarding-head-text">
-        <p class="section-label">Guidance &amp; Counselling</p>
-        <h3>Supporting Every Student's Journey</h3>
-        <blockquote>"Every student's mental health and emotional well-being is our priority. We provide a safe space for students to express themselves, navigate challenges, and build resilience for life beyond school."</blockquote>
-        <p class="principal-name">Mrs. Catherine Kamau</p>
-        <p class="principal-title">Head of Guidance &amp; Counselling</p>
-      </div>
-      <div class="boarding-head-photo">
-        <img src="https://placehold.co/350x400/6B1D4A/ffffff?text=Guidance+Counsellor" alt="Mrs. Catherine Kamau — Head of Guidance &amp; Counselling" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Dormitory Life -->
-<section class="dormitory-life section">
+<!-- Daily Life Timeline -->
+<section class="daily-life section section--dark">
   <div class="container">
     <div class="text-center">
-      <p class="section-label">Boarding Facilities</p>
-      <h2 class="section-title section-title-center">Our Dormitories</h2>
-      <p class="section-subtitle" style="margin: 0 auto 2rem;">Students are divided into 13 houses, each named after famous mountains</p>
+      <p class="section-label reveal">A Day at Kiambu High</p>
+      <h2 class="section-title section-title-center reveal">Daily Life Timeline</h2>
+      <p class="section-subtitle reveal">Experience the structured rhythm that nurtures excellence</p>
     </div>
-    <div class="dorm-grid">
-      <div class="dorm-card reveal">
-        <h4>🏠 Senior Dormitories</h4>
-        <p>Modern dormitories for Form 3 and Form 4 students. Each wing has a common room, reading area, and laundry facilities. 24-hour security and dedicated house masters on every floor.</p>
-        <div class="dorm-meta">
-          <span class="dorm-capacity">Capacity: 600</span>
-          <span class="dorm-head">Senior Housemaster: Mr. Paul Gathogo</span>
+    <div class="timeline-wrapper">
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-time">5:30 AM</div>
+          <div class="timeline-content">
+            <h4>Wake Up &amp; Morning Prep</h4>
+            <p>Personal preparation, dormitory cleaning, and morning prayers</p>
+          </div>
         </div>
-        <div class="dorm-tags">
-          <span class="dorm-tag">Wi-Fi Enabled</span>
-          <span class="dorm-tag">Hot Showers</span>
-          <span class="dorm-tag">Study Hall</span>
-          <span class="dorm-tag">Sick Bay</span>
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-time">6:30 AM</div>
+          <div class="timeline-content">
+            <h4>Morning Preps</h4>
+            <p>Supervised personal study and revision before classes</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-time">7:30 AM</div>
+          <div class="timeline-content">
+            <h4>Breakfast</h4>
+            <p>Nutritious morning meal in the dining hall</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-time">8:00 AM</div>
+          <div class="timeline-content">
+            <h4>Morning Assembly</h4>
+            <p>School-wide assembly with announcements and motivation</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-time">8:30 AM</div>
+          <div class="timeline-content">
+            <h4>Academic Classes</h4>
+            <p>Morning lessons across all subjects</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-time">1:00 PM</div>
+          <div class="timeline-content">
+            <h4>Lunch Break</h4>
+            <p>Balanced lunch and rest period</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-time">2:00 PM</div>
+          <div class="timeline-content">
+            <h4>Afternoon Classes</h4>
+            <p>Continued academic sessions</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-time">4:30 PM</div>
+          <div class="timeline-content">
+            <h4>Sports &amp; Activities</h4>
+            <p>Games, clubs, and co-curricular activities</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-time">6:30 PM</div>
+          <div class="timeline-content">
+            <h4>Dinner</h4>
+            <p>Evening meal and relaxation</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-time">7:30 PM</div>
+          <div class="timeline-content">
+            <h4>Evening Preps</h4>
+            <p>Supervised study and homework sessions</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-time">10:00 PM</div>
+          <div class="timeline-content">
+            <h4>Lights Out</h4>
+            <p>Rest and preparation for the next day</p>
+          </div>
         </div>
       </div>
-      <div class="dorm-card reveal reveal-delay-1">
-        <h4>🏠 Junior Dormitories</h4>
-        <p>Well-maintained dormitories for Form 1 and Form 2 students. Includes the 200-bed ESP hostel commissioned in 2012 and the newer 92-capacity dormitory completed in 2019.</p>
-        <div class="dorm-meta">
-          <span class="dorm-capacity">Capacity: 600</span>
-          <span class="dorm-head">Junior Housemaster: Mr. Daniel Mwangi</span>
+    </div>
+  </div>
+</section>
+
+<!-- Boarding Houses -->
+<section class="boarding-houses section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">The Mountain Houses</p>
+      <h2 class="section-title section-title-center reveal">Our 13 Boarding Houses</h2>
+      <p class="section-subtitle reveal">Each house named after Africa's majestic mountains, fostering pride and healthy competition</p>
+    </div>
+    <div class="houses-grid">
+      <div class="house-card reveal">
+        <div class="house-icon">🏔️</div>
+        <h4>Kilimanjaro</h4>
+        <span class="house-type">Senior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-1">
+        <div class="house-icon">🗻</div>
+        <h4>Kenya</h4>
+        <span class="house-type">Senior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-2">
+        <div class="house-icon">⛰️</div>
+        <h4>Elgon</h4>
+        <span class="house-type">Senior House</span>
+      </div>
+      <div class="house-card reveal">
+        <div class="house-icon">🏔️</div>
+        <h4>Longonot</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-1">
+        <div class="house-icon">🗻</div>
+        <h4>Suswa</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-2">
+        <div class="house-icon">⛰️</div>
+        <h4>Menengai</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal">
+        <div class="house-icon">🏔️</div>
+        <h4>Satima</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-1">
+        <div class="house-icon">🗻</div>
+        <h4>Kinangop</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-2">
+        <div class="house-icon">⛰️</div>
+        <h4>Marsabit</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal">
+        <div class="house-icon">🏔️</div>
+        <h4>Nyiru</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-1">
+        <div class="house-icon">🗻</div>
+        <h4>Kulal</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card reveal reveal-delay-2">
+        <div class="house-icon">⛰️</div>
+        <h4>Ndoto</h4>
+        <span class="house-type">Junior House</span>
+      </div>
+      <div class="house-card house-card--highlight reveal">
+        <div class="house-icon">🏔️</div>
+        <h4>ESP Hostel</h4>
+        <span class="house-type">200-Bed Modern Facility</span>
+      </div>
+    </div>
+    <div class="houses-info text-center reveal">
+      <p>Each house is supervised by dedicated housemasters who ensure student welfare, discipline, and mentorship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities Grid -->
+<section class="facilities-section section section--light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">World-Class Amenities</p>
+      <h2 class="section-title section-title-center reveal">Campus Facilities</h2>
+      <p class="section-subtitle reveal">Everything your son needs to thrive academically and personally</p>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card reveal">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
-        <div class="dorm-tags">
-          <span class="dorm-tag">Wi-Fi Enabled</span>
-          <span class="dorm-tag">Hot Showers</span>
-          <span class="dorm-tag">Study Hall</span>
-          <span class="dorm-tag">Mentorship Programme</span>
+        <h4>Modern Library</h4>
+        <p>Extensive collection with quiet study spaces and digital resources</p>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5-8 3-3 8 8-3 3m2-8l5 5m-2-7l3-3"/><circle cx="18" cy="5" r="3"/></svg>
+        </div>
+        <h4>Science Laboratories</h4>
+        <p>Fully equipped Physics, Chemistry, Biology, and Computer labs</p>
+      </div>
+      <div class="facility-card reveal reveal-delay-2">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h4>Dining Hall</h4>
+        <p>Spacious dining facility serving balanced, nutritious meals daily</p>
+      </div>
+      <div class="facility-card reveal">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h4>Health Center</h4>
+        <p>On-site medical facility with qualified nursing staff 24/7</p>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <h4>Sports Fields</h4>
+        <p>Rugby pitch, football field, basketball courts, and athletics track</p>
+      </div>
+      <div class="facility-card reveal reveal-delay-2">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h4>Chapel</h4>
+        <p>Spiritual center for worship, reflection, and community gatherings</p>
+      </div>
+      <div class="facility-card reveal">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h4>ICT Center</h4>
+        <p>Modern computer labs with high-speed internet connectivity</p>
+      </div>
+      <div class="facility-card reveal reveal-delay-1">
+        <div class="facility-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Wi-Fi Campus</h4>
+        <p>Campus-wide wireless internet for research and learning</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Message -->
+<section class="leadership-message section">
+  <div class="container">
+    <div class="leadership-grid">
+      <div class="leadership-card reveal">
+        <div class="leadership-image">
+          <img src="https://placehold.co/400x500/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
+          <div class="leadership-accent"></div>
+        </div>
+        <div class="leadership-content">
+          <p class="section-label">From Our Boarding Master</p>
+          <h3>A Nurturing Home Environment</h3>
+          <blockquote>"At Kiambu High School, we believe that a well-rested, well-fed, and emotionally supported student is one who excels academically. Our boarding facilities are designed to be a true home away from home, where every boy is known, valued, and guided toward his full potential."</blockquote>
+          <div class="leadership-name">
+            <strong>Mr. Michael Wachira</strong>
+            <span>Boarding Master &amp; Games Master</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wellness & Support -->
+<section class="wellness-section section section--light">
+  <div class="container">
+    <div class="wellness-grid">
+      <div class="wellness-content reveal">
+        <p class="section-label">Wellbeing &amp; Support</p>
+        <h2 class="section-title">Guidance &amp; Counselling</h2>
+        <p class="lead-text">We prioritize the mental health and emotional well-being of every student. Our dedicated counselling department provides a safe space for students to navigate challenges and build resilience.</p>
+        <div class="wellness-services">
+          <div class="wellness-item">
+            <span class="wellness-icon">🧠</span>
+            <div>
+              <h4>Mental Health Support</h4>
+              <p>Confidential counselling and support services</p>
+            </div>
+          </div>
+          <div class="wellness-item">
+            <span class="wellness-icon">💬</span>
+            <div>
+              <h4>Peer Mentorship</h4>
+              <p>Senior students guide juniors through school life</p>
+            </div>
+          </div>
+          <div class="wellness-item">
+            <span class="wellness-icon">👨‍👩‍👦</span>
+            <div>
+              <h4>Parent Liaison</h4>
+              <p>Regular communication with families</p>
+            </div>
+          </div>
+          <div class="wellness-item">
+            <span class="wellness-icon">🎯</span>
+            <div>
+              <h4>Career Guidance</h4>
+              <p>University and career pathway counselling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wellness-profile reveal reveal-delay-1">
+        <img src="https://placehold.co/400x500/2a5c8a/ffffff?text=Counsellor" alt="Mrs. Catherine Kamau — Head of Guidance &amp; Counselling" loading="lazy">
+        <div class="wellness-profile-info">
+          <h4>Mrs. Catherine Kamau</h4>
+          <span>Head of Guidance &amp; Counselling</span>
+          <p>"Every student's journey is unique. We're here to ensure each boy has the support he needs to thrive."</p>
         </div>
       </div>
     </div>
@@ -175,90 +486,195 @@
 </section>
 
 <!-- Student Leadership -->
-<section class="student-leadership">
+<section class="student-leadership-modern section">
   <div class="container">
     <div class="text-center">
-      <p class="section-label">Student Government</p>
-      <h2 class="section-title section-title-center">Student Leadership</h2>
+      <p class="section-label reveal">Student Government</p>
+      <h2 class="section-title section-title-center reveal">Student Leadership 2025</h2>
+      <p class="section-subtitle reveal">Young men leading by example and serving their peers</p>
     </div>
-    <div class="leaders-showcase">
-      <div class="leader-card reveal">
-        <div class="leader-img">
-          <img src="https://placehold.co/300x350/6B1D4A/ffffff?text=School+Captain" alt="Brian Njoroge — School Captain" loading="lazy">
+
+    <!-- Captains -->
+    <div class="captains-showcase">
+      <div class="captain-card reveal">
+        <div class="captain-image">
+          <img src="https://placehold.co/350x400/6B1D4A/ffffff?text=School+Captain" alt="Brian Njoroge — School Captain" loading="lazy">
         </div>
-        <div class="leader-info">
-          <h4>Brian Njoroge</h4>
-          <span class="leader-title">School Captain</span>
-          <p>"My vision is to foster unity, discipline, and academic excellence among all students."</p>
+        <div class="captain-info">
+          <span class="captain-badge">School Captain</span>
+          <h3>Brian Njoroge</h3>
+          <p class="captain-quote">"My vision is to foster unity, discipline, and academic excellence among all students. Together, we can make this year the best in our school's history."</p>
         </div>
       </div>
-      <div class="leader-card reveal reveal-delay-1">
-        <div class="leader-img">
-          <img src="https://placehold.co/300x350/8B2D5E/ffffff?text=Deputy+Captain" alt="Samuel Ochieng — Deputy School Captain" loading="lazy">
+      <div class="captain-card reveal reveal-delay-1">
+        <div class="captain-image">
+          <img src="https://placehold.co/350x400/8B2D5E/ffffff?text=Deputy+Captain" alt="Samuel Ochieng — Deputy School Captain" loading="lazy">
         </div>
-        <div class="leader-info">
-          <h4>Samuel Ochieng</h4>
-          <span class="leader-title">Deputy School Captain</span>
-          <p>"Together we can create an environment where every student thrives and achieves his full potential."</p>
+        <div class="captain-info">
+          <span class="captain-badge">Deputy School Captain</span>
+          <h3>Samuel Ochieng</h3>
+          <p class="captain-quote">"Together we can create an environment where every student thrives and achieves his full potential."</p>
         </div>
       </div>
     </div>
 
     <!-- Prefects Grid -->
-    <h3 class="prefects-heading">Prefects Body 2025</h3>
-    <div class="prefects-grid">
-      <div class="prefect-card reveal">
-        <img src="https://placehold.co/150x150/6B1D4A/ffffff?text=K.O" alt="Kevin Otieno" loading="lazy">
-        <h5>Kevin Otieno</h5>
-        <span>Academics Prefect</span>
-      </div>
-      <div class="prefect-card reveal reveal-delay-1">
-        <img src="https://placehold.co/150x150/8B2D5E/ffffff?text=P.W" alt="Peter Waweru" loading="lazy">
-        <h5>Peter Waweru</h5>
-        <span>Dining Hall Prefect</span>
-      </div>
-      <div class="prefect-card reveal reveal-delay-2">
-        <img src="https://placehold.co/150x150/6B1D4A/ffffff?text=J.K" alt="James Kiprop" loading="lazy">
-        <h5>James Kiprop</h5>
-        <span>Sports Captain</span>
-      </div>
-      <div class="prefect-card reveal">
-        <img src="https://placehold.co/150x150/2a5c8a/ffffff?text=E.M" alt="Emmanuel Mutua" loading="lazy">
-        <h5>Emmanuel Mutua</h5>
-        <span>Entertainment Prefect</span>
-      </div>
-      <div class="prefect-card reveal reveal-delay-1">
-        <img src="https://placehold.co/150x150/4a2a6b/ffffff?text=D.K" alt="Daniel Kamau" loading="lazy">
-        <h5>Daniel Kamau</h5>
-        <span>Compound Prefect</span>
-      </div>
-      <div class="prefect-card reveal reveal-delay-2">
-        <img src="https://placehold.co/150x150/6b4a2a/ffffff?text=V.O" alt="Victor Omondi" loading="lazy">
-        <h5>Victor Omondi</h5>
-        <span>Health Prefect</span>
-      </div>
-      <div class="prefect-card reveal">
-        <img src="https://placehold.co/150x150/8a2a2a/ffffff?text=M.O" alt="Martin Odhiambo" loading="lazy">
-        <h5>Martin Odhiambo</h5>
-        <span>Chapel Prefect</span>
-      </div>
-      <div class="prefect-card reveal reveal-delay-1">
-        <img src="https://placehold.co/150x150/2a8a5c/ffffff?text=A.N" alt="Andrew Njenga" loading="lazy">
-        <h5>Andrew Njenga</h5>
-        <span>Library Prefect</span>
+    <div class="prefects-section">
+      <h3 class="prefects-title reveal">Prefects Body</h3>
+      <div class="prefects-modern-grid">
+        <div class="prefect-modern-card reveal">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/6B1D4A/ffffff?text=KO" alt="Kevin Otieno" loading="lazy">
+          </div>
+          <h4>Kevin Otieno</h4>
+          <span class="prefect-role">Academics Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal reveal-delay-1">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/8B2D5E/ffffff?text=PW" alt="Peter Waweru" loading="lazy">
+          </div>
+          <h4>Peter Waweru</h4>
+          <span class="prefect-role">Dining Hall Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal reveal-delay-2">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/6B1D4A/ffffff?text=JK" alt="James Kiprop" loading="lazy">
+          </div>
+          <h4>James Kiprop</h4>
+          <span class="prefect-role">Sports Captain</span>
+        </div>
+        <div class="prefect-modern-card reveal">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/2a5c8a/ffffff?text=EM" alt="Emmanuel Mutua" loading="lazy">
+          </div>
+          <h4>Emmanuel Mutua</h4>
+          <span class="prefect-role">Entertainment Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal reveal-delay-1">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/4a2a6b/ffffff?text=DK" alt="Daniel Kamau" loading="lazy">
+          </div>
+          <h4>Daniel Kamau</h4>
+          <span class="prefect-role">Compound Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal reveal-delay-2">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/6b4a2a/ffffff?text=VO" alt="Victor Omondi" loading="lazy">
+          </div>
+          <h4>Victor Omondi</h4>
+          <span class="prefect-role">Health Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/8a2a2a/ffffff?text=MO" alt="Martin Odhiambo" loading="lazy">
+          </div>
+          <h4>Martin Odhiambo</h4>
+          <span class="prefect-role">Chapel Prefect</span>
+        </div>
+        <div class="prefect-modern-card reveal reveal-delay-1">
+          <div class="prefect-avatar">
+            <img src="https://placehold.co/120x120/2a8a5c/ffffff?text=AN" alt="Andrew Njenga" loading="lazy">
+          </div>
+          <h4>Andrew Njenga</h4>
+          <span class="prefect-role">Library Prefect</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Fees CTA -->
-<section class="fees-cta">
-  <div class="container text-center">
-    <p class="section-label">Fees Structure</p>
-    <h2 class="section-title section-title-center">2025 Fees</h2>
-    <div class="fees-amount">KES 53,554 <span>/ year</span></div>
-    <p class="fees-note">Government-subsidized fees. Bursaries available for needy students.</p>
-    <a href="#" class="btn btn-secondary">Download Full Fees Structure</a>
+<!-- Student Voices -->
+<section class="student-voices section section--dark">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">Student Testimonials</p>
+      <h2 class="section-title section-title-center reveal">Hear From Our Students</h2>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card reveal">
+        <div class="voice-content">
+          <div class="quote-icon">"</div>
+          <p>"Kiambu High has taught me more than academics — it's taught me discipline, resilience, and the value of brotherhood. I've made friendships here that will last a lifetime."</p>
+        </div>
+        <div class="voice-author">
+          <img src="https://placehold.co/60x60/6B1D4A/ffffff?text=JM" alt="John Mwangi" loading="lazy">
+          <div>
+            <strong>John Mwangi</strong>
+            <span>Form 4 Student</span>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card reveal reveal-delay-1">
+        <div class="voice-content">
+          <div class="quote-icon">"</div>
+          <p>"The support from teachers and housemasters is incredible. They genuinely care about our success both in and out of the classroom."</p>
+        </div>
+        <div class="voice-author">
+          <img src="https://placehold.co/60x60/8B2D5E/ffffff?text=PK" alt="Patrick Kibet" loading="lazy">
+          <div>
+            <strong>Patrick Kibet</strong>
+            <span>Form 3 Student</span>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card reveal reveal-delay-2">
+        <div class="voice-content">
+          <div class="quote-icon">"</div>
+          <p>"Being part of the rugby team and excelling academically showed me that balance is possible. Kiambu High prepares you for life."</p>
+        </div>
+        <div class="voice-author">
+          <img src="https://placehold.co/60x60/2a5c8a/ffffff?text=DO" alt="David Ochieng" loading="lazy">
+          <div>
+            <strong>David Ochieng</strong>
+            <span>Form 4 Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fees Section -->
+<section class="fees-section section">
+  <div class="container">
+    <div class="fees-card reveal">
+      <div class="fees-content">
+        <p class="section-label">2025 School Year</p>
+        <h2>Fees Structure</h2>
+        <div class="fees-amount">
+          <span class="currency">KES</span>
+          <span class="amount">53,554</span>
+          <span class="period">per year</span>
+        </div>
+        <p class="fees-note">Government-subsidized fees as a national school. Bursaries and financial assistance available for students in need.</p>
+        <div class="fees-includes">
+          <span class="fee-item">✓ Tuition &amp; Learning Materials</span>
+          <span class="fee-item">✓ Full Boarding &amp; Meals</span>
+          <span class="fee-item">✓ Medical Insurance</span>
+          <span class="fee-item">✓ Sports &amp; Activities</span>
+        </div>
+        <a href="/contact" class="btn btn-gold">Request Fees Breakdown</a>
+      </div>
+      <div class="fees-image">
+        <img src="images/gallery/school life/KHSGate5.jpg" alt="Kiambu High School Gate" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application CTA -->
+<section class="application-cta">
+  <div class="cta-bg" style="background-image: url('images/gallery/academics/GATE-2.jpg');"></div>
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <h2>Ready to Join the Brotherhood?</h2>
+      <p>Begin your journey at Kenya's premier boys' boarding school. Applications are open.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-gold">Apply Now</a>
+        <a href="/gallery" class="btn btn-outline-light">Virtual Tour</a>
+      </div>
+    </div>
   </div>
 </section>
 

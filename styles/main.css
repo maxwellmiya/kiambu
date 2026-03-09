@@ -6520,7 +6520,924 @@ p { margin-bottom: 1rem; }
 }
 
 /* ============================================
-   22. RESPONSIVE
+   22. STUDENT LIFE PAGE - MODERN REDESIGN
+   ============================================ */
+
+/* Full-Screen Hero */
+.studentlife-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.studentlife-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+.studentlife-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 13, 22, 0.7) 0%, rgba(26, 13, 22, 0.85) 100%);
+}
+
+.studentlife-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+.studentlife-hero-content .hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.studentlife-hero-content h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.studentlife-hero-content .hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: transparent;
+  text-decoration: none;
+}
+
+.btn-outline-light:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.studentlife-hero-stats {
+  position: absolute;
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4rem;
+  z-index: 2;
+}
+
+.hero-stat-item {
+  text-align: center;
+}
+
+.hero-stat-item .stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.hero-stat-item .stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Campus Overview */
+.campus-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.campus-overview-content .lead-text {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.campus-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.campus-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.campus-feature .feature-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.campus-feature .feature-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+}
+
+.campus-feature .feature-text h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.campus-feature .feature-text p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.campus-overview-images .image-stack {
+  position: relative;
+  padding: 2rem;
+}
+
+.image-stack .stack-img-1 {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.image-stack .stack-img-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #fff;
+}
+
+.image-stack .image-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: var(--gold);
+  opacity: 0.3;
+  border-radius: var(--radius);
+  z-index: -1;
+}
+
+/* Daily Life Timeline */
+.daily-life {
+  background: var(--dark);
+  color: #fff;
+}
+
+.daily-life .section-label {
+  color: var(--gold);
+}
+
+.daily-life .section-title {
+  color: #fff;
+}
+
+.daily-life .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-wrapper {
+  overflow-x: auto;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.timeline {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(212, 175, 55, 0.3) 100%);
+  transform: translateY(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 140px;
+}
+
+.timeline-item::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+.timeline-time {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  background: var(--dark);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.timeline-content {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+}
+
+.timeline-content h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Boarding Houses */
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.house-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.house-card .house-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.house-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.house-card .house-type {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.house-card--highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  grid-column: span 2;
+}
+
+.house-card--highlight h4,
+.house-card--highlight .house-type {
+  color: #fff;
+}
+
+.houses-info {
+  margin-top: 2rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* Facilities Grid */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.facility-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.facility-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.facility-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+}
+
+.facility-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.facility-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Leadership Message */
+.leadership-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.leadership-card {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.leadership-image {
+  position: relative;
+}
+
+.leadership-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leadership-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: var(--gold);
+  opacity: 0.5;
+  border-radius: var(--radius);
+}
+
+.leadership-content {
+  padding: 3rem;
+}
+
+.leadership-content h3 {
+  font-size: 1.75rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.leadership-content blockquote {
+  font-family: var(--font-alt);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+
+.leadership-name strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.leadership-name span {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+/* Wellness Section */
+.wellness-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: center;
+}
+
+.wellness-content .lead-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.wellness-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.wellness-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.wellness-item .wellness-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.wellness-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.wellness-item p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.wellness-profile {
+  position: relative;
+}
+
+.wellness-profile img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.wellness-profile-info {
+  position: absolute;
+  bottom: -30px;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.wellness-profile-info h4 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.wellness-profile-info span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.wellness-profile-info p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Student Leadership Modern */
+.student-leadership-modern {
+  background: linear-gradient(180deg, #fff 0%, #f8f6f4 100%);
+}
+
+.captains-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.captain-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  align-items: center;
+}
+
+.captain-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.captain-info {
+  padding: 1.5rem;
+}
+
+.captain-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold) 0%, #c9a227 100%);
+  color: var(--dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.captain-info h3 {
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.captain-quote {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.prefects-section {
+  text-align: center;
+}
+
+.prefects-title {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
+
+.prefects-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.prefect-modern-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.prefect-modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.prefect-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+}
+
+.prefect-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prefect-modern-card h4 {
+  font-size: 0.95rem;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.prefect-role {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Student Voices */
+.student-voices {
+  background: var(--dark);
+}
+
+.student-voices .section-label {
+  color: var(--gold);
+}
+
+.student-voices .section-title {
+  color: #fff;
+}
+
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.voice-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.voice-content {
+  margin-bottom: 1.5rem;
+}
+
+.quote-icon {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.5;
+  margin-bottom: -1.5rem;
+}
+
+.voice-content p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.voice-author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.voice-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.voice-author strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.voice-author span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Fees Section */
+.fees-section {
+  padding: 6rem 0;
+}
+
+.fees-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.fees-content {
+  padding: 4rem;
+  color: #fff;
+}
+
+.fees-content .section-label {
+  color: var(--gold);
+}
+
+.fees-content h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.fees-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fees-amount .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.fees-amount .amount {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.fees-amount .period {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.fees-note {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.fees-includes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.fee-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+.fees-image {
+  position: relative;
+}
+
+.fees-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Application CTA */
+.application-cta {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.application-cta .cta-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.application-cta .cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(107, 29, 74, 0.9) 0%, rgba(26, 13, 22, 0.95) 100%);
+}
+
+.application-cta .cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.application-cta h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.application-cta p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   23. RESPONSIVE
    ============================================ */
 @media (max-width: 1280px) {
   .nav-link { font-size: 0.92rem; padding: 0.5rem 0.8rem; }
@@ -6558,6 +7475,22 @@ p { margin-bottom: 1rem; }
   .trustees-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .about-logo-watermark { display: none; }
+
+  /* Student Life Page - 1024px */
+  .campus-overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .campus-overview-images { order: -1; }
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .leadership-card { grid-template-columns: 1fr; }
+  .leadership-image { max-height: 400px; }
+  .wellness-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .wellness-profile { order: -1; }
+  .captains-showcase { grid-template-columns: 1fr; gap: 2rem; }
+  .captain-card { grid-template-columns: 150px 1fr; }
+  .prefects-modern-grid { grid-template-columns: repeat(4, 1fr); }
+  .voices-grid { grid-template-columns: repeat(2, 1fr); }
+  .fees-card { grid-template-columns: 1fr; }
+  .fees-image { max-height: 300px; }
+  .studentlife-hero-stats { gap: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -6623,12 +7556,47 @@ p { margin-bottom: 1rem; }
   .vision-card-v2 { padding: 2rem 1.5rem; }
   .vision-card-v2 h3 { font-size: 1.1rem; }
   .about-vision--redesigned { padding: 4rem 0 3rem; }
+
+  /* Student Life Page - 768px */
+  .studentlife-hero { min-height: 100vh; }
+  .studentlife-hero-content h1 { font-size: 2.5rem; }
+  .studentlife-hero-stats { position: relative; bottom: auto; flex-wrap: wrap; gap: 1.5rem; justify-content: center; padding: 0 1rem; margin-top: 2rem; }
+  .hero-stat-item .stat-number { font-size: 2rem; }
+  .scroll-indicator { display: none; }
+  .campus-features { gap: 1rem; }
+  .image-stack .stack-img-2 { width: 50%; }
+  .timeline { padding-bottom: 2rem; }
+  .timeline-item { min-width: 120px; }
+  .houses-grid { grid-template-columns: repeat(2, 1fr); }
+  .house-card--highlight { grid-column: span 2; }
+  .facilities-grid { grid-template-columns: 1fr; }
+  .leadership-content { padding: 2rem; }
+  .wellness-services { grid-template-columns: 1fr; }
+  .wellness-profile-info { position: relative; bottom: auto; left: auto; right: auto; margin-top: 1rem; }
+  .captain-card { grid-template-columns: 1fr; }
+  .captain-image img { height: 200px; }
+  .prefects-modern-grid { grid-template-columns: repeat(2, 1fr); }
+  .voices-grid { grid-template-columns: 1fr; }
+  .fees-content { padding: 2.5rem; }
+  .fees-amount .amount { font-size: 2.5rem; }
+  .application-cta { padding: 4rem 0; }
 }
 
 @media (max-width: 480px) {
   .values-grid { grid-template-columns: 1fr 1fr; }
   .prefects-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
+
+  /* Student Life Page - 480px */
+  .studentlife-hero-content h1 { font-size: 2rem; }
+  .studentlife-hero-stats { gap: 1rem; }
+  .hero-stat-item .stat-number { font-size: 1.5rem; }
+  .hero-stat-item .stat-label { font-size: 0.7rem; }
+  .houses-grid { grid-template-columns: 1fr; }
+  .house-card--highlight { grid-column: span 1; }
+  .prefects-modern-grid { grid-template-columns: 1fr; }
+  .fees-content { padding: 1.5rem; }
+  .fees-includes { flex-direction: column; }
 }
 
 /* Print */
