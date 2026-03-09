@@ -142,7 +142,14 @@
           <span>Our Story</span>
         </div>
         <h2 class="story-heading">A Legacy of <span class="text-gradient">Excellence</span> Since 1971</h2>
-        <p class="story-lead">"From humble beginnings to a beacon of excellence — Kiambu High School has shaped generations of leaders, scholars, and change-makers."</p>
+        
+        <!-- Principal's Message -->
+        <div class="principal-message">
+          <div class="principal-quote-mark">"</div>
+          <p class="principal-msg-text">As we continue to build on our rich heritage, Kiambu High School remains committed to nurturing well-rounded individuals who excel academically, embrace integrity, and contribute meaningfully to society. Our mission is to inspire every student to discover their potential and pursue excellence in all endeavors.</p>
+          <p class="principal-msg-signature">— Mr. Robert Mukanzi, Principal</p>
+        </div>
+        
         <p>The idea of Kiambu High School was conceived in 1968 by a group of Kiambu leaders and prominent citizens who recognised the need for a quality boys' secondary school in the district. The school was formally established in 1971, opening its doors with the first cohort of students on its 35-acre campus in Kiambu County.</p>
         <p>Built under the Open Plan System with Canadian development assistance, the school's distinctive architecture set it apart from the outset. Initially a mixed school, Kiambu High School was converted to an all-boys institution in 1993.</p>
         <div class="story-motto">
@@ -154,22 +161,23 @@
         </div>
       </div>
       <div class="story-visual">
-        <div class="story-image-stack">
-          <div class="story-image story-image--1">
-            <img src="images/gallery/TEACHING STAFF.jpg" alt="Our Teaching Staff" loading="lazy">
+        <div class="principal-profile">
+          <div class="principal-image-frame">
+            <img src="images/PRINCIPAL.png" alt="Mr. Robert Mukanzi - Principal" loading="lazy">
           </div>
-          <div class="story-image story-image--2">
-            <img src="images/gallery/academics/ASSEMBLY.jpg" alt="School Assembly" loading="lazy">
-          </div>
-          <div class="story-stats-card">
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-text">Years of Excellence</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">13</span>
-              <span class="stat-text">Dormitory Houses</span>
+          <div class="principal-info">
+            <h3 class="principal-name">Mr. Robert Mukanzi</h3>
+            <span class="principal-title">Principal, Kiambu High School</span>
+            <p class="principal-credentials">M.Ed Educational Administration | B.Ed Science</p>
+            <div class="principal-stats">
+              <div class="principal-stat">
+                <span class="stat-number">2023</span>
+                <span class="stat-label">Appointed</span>
+              </div>
+              <div class="principal-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Years Legacy</span>
+              </div>
             </div>
           </div>
         </div>
@@ -443,72 +451,11 @@
       <p>In 2023, the association underwent a significant transformation — rebranding from the Kiambu High School Old Boys Association (KHSOBA) to the Kiambu High School Alumni Foundation (KHSAF), reflecting a forward-looking vision of philanthropy, mentorship, and institutional development.</p>
     </div>
     
-    <div class="alumni-features">
-      <div class="alumni-feature">
-        <div class="feature-icon">🎯</div>
-        <h4>KHSAF Vision</h4>
-        <p>To be the leading alumni foundation in Kenya, driving educational excellence and community development through active engagement.</p>
-      </div>
-      <div class="alumni-feature">
-        <div class="feature-icon">🚀</div>
-        <h4>KHSAF Mission</h4>
-        <p>To connect, support, and empower alumni while fostering a culture of giving back — mentoring students and funding infrastructure.</p>
-      </div>
-    </div>
-    
-    <div class="trustees-section">
-      <h3>Board of Trustees</h3>
-      <div class="trustees-carousel">
-        <div class="trustee">
-          <div class="trustee-avatar">WG</div>
-          <div class="trustee-details">
-            <strong>Mr. Wilfred Gichina</strong>
-            <span>Chairman</span>
-          </div>
-        </div>
-        <div class="trustee">
-          <div class="trustee-avatar">IM</div>
-          <div class="trustee-details">
-            <strong>Mr. Ichangai Muiruri</strong>
-            <span>Vice Chairman</span>
-          </div>
-        </div>
-        <div class="trustee">
-          <div class="trustee-avatar">LK</div>
-          <div class="trustee-details">
-            <strong>Mr. Lawrence Kaminja</strong>
-            <span>Treasurer</span>
-          </div>
-        </div>
-        <div class="trustee">
-          <div class="trustee-avatar">GK</div>
-          <div class="trustee-details">
-            <strong>Mr. George Kinyanjui</strong>
-            <span>Secretary</span>
-          </div>
-        </div>
-        <div class="trustee">
-          <div class="trustee-avatar">SM</div>
-          <div class="trustee-details">
-            <strong>Eng. Simon Muigai</strong>
-            <span>Board Member</span>
-          </div>
-        </div>
-        <div class="trustee">
-          <div class="trustee-avatar">OM</div>
-          <div class="trustee-details">
-            <strong>Mr. Oliver Manyasi</strong>
-            <span>Board Member</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="alumni-cta">
-        <a href="https://www.khsaf.org/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
-          <span>Visit KHSAF Website</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
-      </div>
+    <div class="alumni-cta">
+      <a href="https://www.khsaf.org/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+        <span>Visit KHSAF Website</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -561,29 +508,51 @@
 
 <script src="scripts/main.js"></script>
 <script>
-// Scroll reveal animations for timeline and values
+// Enhanced scroll reveal animations for timeline
 document.addEventListener('DOMContentLoaded', function() {
-  const observerOptions = {
+  // Timeline observer - items appear and disappear as you scroll
+  const timelineObserverOptions = {
+    threshold: [0, 0.2, 0.8, 1],
+    rootMargin: '-10% 0px -10% 0px'
+  };
+
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const ratio = entry.intersectionRatio;
+      const target = entry.target;
+      
+      if (ratio > 0.2) {
+        target.classList.add('is-visible');
+        target.style.setProperty('--reveal-opacity', Math.min(ratio * 1.5, 1));
+      } else {
+        target.classList.remove('is-visible');
+        target.style.setProperty('--reveal-opacity', 0);
+      }
+    });
+  }, timelineObserverOptions);
+
+  // Observe timeline items
+  document.querySelectorAll('.timeline-reveal').forEach(item => {
+    timelineObserver.observe(item);
+  });
+
+  // Value cards observer - standard reveal (stays visible)
+  const valuesObserverOptions = {
     threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
   };
 
-  const revealObserver = new IntersectionObserver((entries) => {
+  const valuesObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
       }
     });
-  }, observerOptions);
-
-  // Observe timeline items
-  document.querySelectorAll('.timeline-reveal').forEach(item => {
-    revealObserver.observe(item);
-  });
+  }, valuesObserverOptions);
 
   // Observe value cards
   document.querySelectorAll('.value-card-new').forEach(card => {
-    revealObserver.observe(card);
+    valuesObserver.observe(card);
   });
 });
 </script>
