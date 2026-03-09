@@ -74,11 +74,44 @@
 <!-- ============================================
      PAGE HERO BANNER
      ============================================ -->
-<section class="page-hero">
+<section class="page-hero page-hero--has-bg page-hero--about" style="background-image: url('images/gallery/academics/ASSEMBLY.jpg');">
+  <!-- Animated floating shapes -->
+  <div class="hero-shapes">
+    <div class="hero-shape hero-shape--1"></div>
+    <div class="hero-shape hero-shape--2"></div>
+    <div class="hero-shape hero-shape--3"></div>
+  </div>
+  
   <div class="page-hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-icon">📖</span>
+      <span>Est. 1971</span>
+    </div>
     <p class="section-label">Discover Our Heritage</p>
-    <h1>About Kiambu High School</h1>
+    <h1 class="hero-title-animated">About Kiambu High School</h1>
     <p class="hero-sub">Over five decades of shaping leaders, scholars, and change-makers</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">50+</span>
+        <span class="hero-stat-label">Years of Excellence</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">35</span>
+        <span class="hero-stat-label">Acres Campus</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">1000+</span>
+        <span class="hero-stat-label">Students</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
   </div>
 </section>
 
@@ -102,15 +135,19 @@
     <!-- History Panel -->
     <div class="about-panel active" id="panel-history">
       <div class="history-content">
-        <div>
+        <div class="history-text">
           <p class="history-pullquote">"From humble beginnings to a beacon of excellence — Kiambu High School has shaped generations of leaders, scholars, and change-makers."</p>
           <p>The idea of Kiambu High School was conceived in 1968 by a group of Kiambu leaders and prominent citizens who recognised the need for a quality boys' secondary school in the district. The school was formally established in 1971, opening its doors with the first cohort of students on its 35-acre campus in Kiambu County. Built under the Open Plan System with Canadian development assistance, the school's distinctive architecture set it apart from the outset.</p>
           <p>Initially a mixed school, Kiambu High School was converted to an all-boys institution in 1993. Our journey is a testament to the enduring spirit of our motto — <em>Faith and Work</em>. Over five decades, the school has grown into one of Kenya's respected Extra-County boarding schools, producing graduates who serve with distinction across every field of human endeavour.</p>
         </div>
-        <div>
-          <div style="width:100%;height:300px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;">
-            <img src="https://placehold.co/500x300/6B1D4A/ffffff?text=School+Heritage" alt="School Heritage" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
+        <div class="history-image-container">
+          <div class="history-image-wrapper">
+            <img src="images/gallery/TEACHING STAFF.jpg" alt="Kiambu High School Teaching Staff" loading="lazy" class="history-image">
+            <div class="history-image-caption">
+              <span class="image-caption-text">Our Dedicated Teaching Staff</span>
+            </div>
           </div>
+          <div class="history-image-accent"></div>
         </div>
       </div>
 
@@ -282,17 +319,35 @@
 
     <!-- Vision Panel -->
     <div class="about-panel" id="panel-vision">
-      <div class="vision-mission">
-        <p class="section-label text-center">Our Purpose</p>
-        <h3 class="text-center" style="margin-bottom: 2rem;">Vision</h3>
-        <p class="vision-text">"An education center producing well equipped men for the society."</p>
-
-        <h3 class="text-center" style="margin-bottom: 1.5rem;">Mission</h3>
-        <div class="mission-card">
-          <p style="margin:0;">To provide holistic, quality and responsive education for self development and service to society.</p>
+      <div class="vision-mission vision-mission--enhanced">
+        <!-- Vision Section -->
+        <div class="vision-header">
+          <div class="vision-badge">🎯 Our Purpose</div>
+          <h2 class="vision-heading">Guiding Principles</h2>
+          <p class="vision-subheading">The foundation of our educational philosophy</p>
         </div>
 
-        <h3 class="text-center" style="margin-bottom: 1rem;">Core Values</h3>
+        <div class="vision-cards-row">
+          <div class="vision-card vision-card--primary">
+            <div class="vision-card-icon">👁️</div>
+            <h3>Our Vision</h3>
+            <p class="vision-card-text">"An education center producing well equipped men for the society."</p>
+          </div>
+          <div class="vision-card vision-card--secondary">
+            <div class="vision-card-icon">🚀</div>
+            <h3>Our Mission</h3>
+            <p class="vision-card-text">To provide holistic, quality and responsive education for self development and service to society.</p>
+          </div>
+        </div>
+
+        <div class="motto-banner">
+          <div class="motto-content">
+            <span class="motto-label">School Motto</span>
+            <span class="motto-text">Faith & Work</span>
+          </div>
+        </div>
+
+        <h3 class="values-heading">Core Values</h3>
         <div class="values-grid">
           <div class="value-card">
             <div class="value-icon">
