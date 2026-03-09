@@ -3975,29 +3975,29 @@ p { margin-bottom: 1rem; }
 }
 
 .message-card--light {
-  background: var(--white);
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.2rem 1.5rem;
-  box-shadow: var(--shadow-md);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .message-card--light h4 {
-  color: var(--primary);
+  color: var(--secondary);
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .message-card--light p {
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.85rem;
   line-height: 1.5;
 }
 
 .message-card--light:hover {
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive for redesigned principal */
