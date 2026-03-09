@@ -4396,24 +4396,30 @@ p { margin-bottom: 1rem; }
 }
 
 .message-card--light {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.85rem 1rem;
   box-shadow: none;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+}
+
+.message-card--light .message-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .message-card--light h4 {
   color: var(--secondary);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
 }
 
 .message-card--light p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
 
 .message-card--light:hover {
@@ -4654,30 +4660,27 @@ p { margin-bottom: 1rem; }
 }
 
 .values-grid-new {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .value-card-new {
   position: relative;
   border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
+  padding: 1.75rem 1.25rem;
   background: var(--white);
   border: 1px solid rgba(107, 29, 74, 0.1);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(30px);
-  width: calc(33.333% - 1.5rem);
-  min-width: 280px;
-  max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .value-card-new.is-visible {
@@ -4739,13 +4742,13 @@ p { margin-bottom: 1rem; }
 }
 
 .value-icon-ring {
-  width: 70px;
-  height: 70px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1rem;
   position: relative;
   transition: all 0.4s ease;
 }
@@ -4777,8 +4780,8 @@ p { margin-bottom: 1rem; }
 }
 
 .value-icon-ring svg {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   color: var(--primary);
   transition: color 0.3s ease;
 }
@@ -4789,15 +4792,15 @@ p { margin-bottom: 1rem; }
 
 .value-card-content h4 {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .value-card-content p {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  line-height: 1.45;
   color: var(--text);
   opacity: 0.8;
 }
@@ -5052,12 +5055,12 @@ p { margin-bottom: 1rem; }
   
   /* New values grid responsive */
   .values-grid-new {
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
   
   .value-card-new {
-    width: calc(50% - 1rem);
-    min-width: 240px;
+    padding: 1.25rem 1rem;
   }
   
   .timeline-item {
@@ -5115,33 +5118,30 @@ p { margin-bottom: 1rem; }
   
   /* New values grid - mobile */
   .values-grid-new {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
   
   .value-card-new {
-    width: 100%;
-    max-width: 100%;
-    padding: 1.5rem 1.25rem;
+    padding: 1rem 0.75rem;
   }
   
   .value-icon-ring {
-    width: 55px;
-    height: 55px;
+    width: 44px;
+    height: 44px;
   }
   
   .value-icon-ring svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
   }
   
   .value-card-content h4 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
   
   .value-card-content p {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
 }
 
