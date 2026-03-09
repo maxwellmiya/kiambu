@@ -3563,7 +3563,7 @@ p { margin-bottom: 1rem; }
   transform: translateY(-50%);
   width: 320px;
   height: 320px;
-  opacity: 0.04;
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
 }
@@ -4488,95 +4488,144 @@ p { margin-bottom: 1rem; }
 }
 
 /* ============================================
-   VISION & MISSION SECTION
+   VISION & MISSION SECTION - REDESIGNED
    ============================================ */
+.about-vision--redesigned {
+  position: relative;
+  padding: 6rem 0 4rem;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.vision-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/gallery/academics/ASSEMBLY.jpg') center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.vision-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 13, 22, 0.7) 0%,
+    rgba(26, 13, 22, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.about-vision--redesigned .container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-vision--redesigned .section-header--light .section-title {
+  color: var(--white);
+}
+
+.about-vision--redesigned .section-header--light .section-badge {
+  background: rgba(200, 151, 42, 0.2);
+  color: var(--secondary);
+}
+
+/* Vision Cards Grid */
+.vision-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vision-card-v2 {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.vision-card-v2:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+}
+
+.vision-card-v2 .vision-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.vision-card-v2 .vision-card-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--secondary);
+}
+
+.vision-card-v2 .vision-card-label {
+  display: inline-block;
+  background: rgba(200, 151, 42, 0.2);
+  color: var(--secondary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.vision-card-v2 h3 {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.vision-card-v2 p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+/* Legacy vision styles kept for compatibility */
 .about-vision {
   padding: 6rem 0;
   background: var(--white);
 }
 
 .vision-showcase {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  display: none;
 }
 
-.vision-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.about-vision--redesigned .vision-showcase {
+  display: block;
 }
 
-.vision-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.vision-card--featured {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  padding: 3rem;
-}
-
-.vision-card-glow {
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(200, 151, 42, 0.3) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.vision-card-content {
-  position: relative;
-  z-index: 2;
-}
-
-.vision-card-label {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--secondary);
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-.vision-card--featured h3 {
-  font-family: var(--font-accent);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-style: italic;
-  color: var(--white);
-  line-height: 1.5;
-}
-
-.vision-card-accent {
-  width: 60px;
-  height: 3px;
-  background: var(--secondary);
-  margin-top: 1.5rem;
-}
-
-.vision-card--mission {
-  background: var(--light);
-  border: 2px solid var(--accent);
-  padding: 2rem;
-}
-
-.vision-card--mission .vision-card-label {
-  background: var(--accent);
-  color: var(--primary);
-}
-
-.vision-card--mission p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text);
+.about-vision--redesigned .vision-main {
+  display: none;
 }
 
 /* Values showcase */
@@ -6240,6 +6289,12 @@ p { margin-bottom: 1rem; }
   .fees-cta { padding: 2.5rem 1.5rem; }
 
   .page-hero { height: 35vh; min-height: 260px; }
+
+  /* Vision section redesigned - mobile */
+  .vision-cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .vision-card-v2 { padding: 2rem 1.5rem; }
+  .vision-card-v2 h3 { font-size: 1.1rem; }
+  .about-vision--redesigned { padding: 4rem 0 3rem; }
 }
 
 @media (max-width: 480px) {
