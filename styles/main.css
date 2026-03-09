@@ -393,6 +393,78 @@ p { margin-bottom: 1rem; }
   color: var(--secondary);
 }
 
+/* Navigation Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-link--parent {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link--parent svg {
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-link--parent svg {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.nav-dropdown-item.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Mobile nav sub-items */
+.mobile-nav-sub {
+  padding-left: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.mobile-nav-sub.active {
+  color: var(--secondary);
+  opacity: 1;
+}
+
 /* Logo */
 .header-logo {
   display: flex;
@@ -2171,6 +2243,69 @@ p { margin-bottom: 1rem; }
 /* ============================================
    15. ACADEMICS STYLES
    ============================================ */
+
+/* Pathway Quick Links on Academics Page */
+.pathway-quick-links {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pathway-quick-links .section-label {
+  margin-bottom: 1.5rem;
+}
+
+.pathway-link-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pathway-link-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.pathway-link-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.pathway-link-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pathway-link-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.pathway-link-card p {
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .pathway-link-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .pathway-link-card {
+    padding: 1.5rem;
+  }
+}
+
 .academics-tabs {
   display: flex;
   justify-content: center;
@@ -4814,6 +4949,509 @@ p { margin-bottom: 1rem; }
   
   .value-card-content p {
     font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   PATHWAY PAGES (STEM, Social Sciences, Arts & Sports)
+   ============================================ */
+
+/* Pathway Hero Badge */
+.page-hero--pathway {
+  position: relative;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(107, 29, 74, 0.75), rgba(26, 13, 22, 0.65));
+  z-index: 1;
+}
+
+.page-hero--pathway .page-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.pathway-hero-badge {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+}
+
+.pathway-hero-icon {
+  font-size: 2.5rem;
+}
+
+/* HOD Section */
+.pathway-hod-section {
+  padding-top: 5rem;
+}
+
+.pathway-hod-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pathway-hod-image {
+  position: relative;
+}
+
+.pathway-hod-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.pathway-hod-badge {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.pathway-hod-content .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.pathway-hod-content .section-title {
+  margin-bottom: 0.25rem;
+}
+
+.pathway-hod-title {
+  color: var(--text);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.pathway-hod-message {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text);
+  border-left: 4px solid var(--secondary);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.pathway-hod-signature {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signature-line {
+  width: 40px;
+  height: 2px;
+  background: var(--secondary);
+}
+
+.pathway-hod-signature span {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* HOS Section */
+.pathway-hos-section {
+  padding: 5rem 0;
+}
+
+.hos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hos-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(107, 29, 74, 0.1);
+}
+
+.hos-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary);
+}
+
+.hos-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--secondary);
+}
+
+.hos-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hos-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+
+.hos-subject {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.hos-credentials {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* Pathway Content Section */
+.pathway-content-section {
+  padding: 5rem 0;
+}
+
+.pathway-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pathway-subject-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(107, 29, 74, 0.08);
+  transition: var(--transition);
+}
+
+.pathway-subject-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.pathway-subject-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pathway-subject-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.pathway-subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pathway-subject-item h4 {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+
+.pathway-subject-item p {
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.pathway-subject-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--accent);
+}
+
+.pathway-subject-footer span {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* CBC Note */
+.pathway-cbc-note {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, var(--accent), rgba(200, 151, 42, 0.1));
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 3rem;
+  border-left: 4px solid var(--secondary);
+}
+
+.pathway-cbc-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.pathway-cbc-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.pathway-cbc-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Pathway Gallery */
+.pathway-gallery-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--dark), var(--primary));
+}
+
+.pathway-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pathway-gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.pathway-gallery-item--large {
+  grid-column: span 2;
+}
+
+.pathway-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pathway-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.pathway-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: var(--white);
+  padding: 2rem 1rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.pathway-gallery-item:hover .pathway-gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Achievements Section */
+.pathway-achievements-section {
+  padding: 5rem 0;
+  background: var(--light);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.achievement-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-top: 4px solid var(--secondary);
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.achievement-card p {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* CTA Section */
+.pathway-cta-section {
+  padding: 4rem 0;
+  background: var(--accent);
+}
+
+.pathway-cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.pathway-cta-section p {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.pathway-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Pathway Responsive */
+@media (max-width: 992px) {
+  .pathway-hod-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .pathway-hod-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .pathway-subjects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pathway-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pathway-gallery-item--large {
+    grid-column: span 2;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pathway-hero-badge {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+  }
+  
+  .pathway-hero-icon {
+    font-size: 1.8rem;
+  }
+  
+  .pathway-hod-section {
+    padding-top: 3rem;
+  }
+  
+  .pathway-cbc-note {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pathway-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .pathway-gallery-item--large {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .achievement-card {
+    padding: 1.25rem;
+  }
+  
+  .achievement-number {
+    font-size: 1.5rem;
   }
 }
 
