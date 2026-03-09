@@ -6206,6 +6206,14 @@ p { margin-bottom: 1rem; }
   padding-left: 1rem;
 }
 
+.deputy-bio {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
 /* ============================================
    DEPARTMENTS PATHWAY REDESIGN
    ============================================ */
