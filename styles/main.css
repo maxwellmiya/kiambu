@@ -676,13 +676,14 @@ p { margin-bottom: 1rem; }
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
-  animation: kenBurns 20s ease infinite alternate;
+  background-position: center 30%;
+  transform: scale(1.02);
+  animation: kenBurns 25s ease infinite alternate;
 }
 
 @keyframes kenBurns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.08); }
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.06); }
 }
 
 .hero-slide-overlay {
@@ -691,7 +692,7 @@ p { margin-bottom: 1rem; }
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(26, 13, 22, 0.72) 0%, rgba(26, 13, 22, 0.4) 40%, rgba(26, 13, 22, 0.12) 75%, transparent 100%);
+  background: linear-gradient(135deg, rgba(26, 13, 22, 0.85) 0%, rgba(26, 13, 22, 0.55) 35%, rgba(26, 13, 22, 0.25) 65%, rgba(26, 13, 22, 0.15) 100%);
   z-index: 2;
 }
 
@@ -711,18 +712,17 @@ p { margin-bottom: 1rem; }
 .hero-content {
   position: absolute;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 5;
-  text-align: left;
+  text-align: center;
   width: 90%;
-  max-width: 700px;
+  max-width: 900px;
   background: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  padding: 0 2rem;
-  margin-left: calc((100% - 1400px) / 2);
-  padding-left: 2rem;
+  padding: 2rem;
+  margin-left: 0;
   border-radius: 0;
 }
 
@@ -768,7 +768,7 @@ p { margin-bottom: 1rem; }
   animation: heroFadeUp 0.8s 0.9s forwards;
   display: flex;
   gap: 1rem;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
