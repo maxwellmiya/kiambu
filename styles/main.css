@@ -4319,8 +4319,7 @@ p { margin-bottom: 1rem; }
 
 /* Enhanced scroll reveal animations with fade in/out */
 .timeline-reveal {
-  --reveal-opacity: 0;
-  opacity: var(--reveal-opacity);
+  opacity: 1;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
@@ -4330,11 +4329,11 @@ p { margin-bottom: 1rem; }
 }
 
 .timeline-item--left.timeline-reveal {
-  transform: translateX(-40px) scale(0.95);
+  transform: translateX(0) scale(1);
 }
 
 .timeline-item--right.timeline-reveal {
-  transform: translateX(40px) scale(0.95);
+  transform: translateX(0) scale(1);
 }
 
 .timeline-item--left.timeline-reveal.is-visible,
@@ -4344,7 +4343,7 @@ p { margin-bottom: 1rem; }
 
 /* Timeline dot animation for reveal */
 .timeline-reveal .timeline-dot {
-  transform: scale(0);
+  transform: scale(1);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s;
 }
 
@@ -6142,13 +6141,17 @@ p { margin-bottom: 1rem; }
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .deputy-card {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  height: 520px;
+  aspect-ratio: 3 / 4;
+  max-height: 450px;
   cursor: default;
   box-shadow: 0 8px 32px rgba(107, 29, 74, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -7477,7 +7480,8 @@ p { margin-bottom: 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .video-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .deputy-card { height: 480px; }
+  .deputy-grid { max-width: 800px; }
+  .deputy-card { max-height: 400px; }
   .pathway-detail-grid { grid-template-columns: repeat(2, 1fr); }
   .alumni-cards { grid-template-columns: 1fr; }
   .trustees-grid { grid-template-columns: repeat(2, 1fr); }
@@ -7533,8 +7537,10 @@ p { margin-bottom: 1rem; }
   .gallery-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
   .trustees-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .deputy-grid { grid-template-columns: 1fr; }
-  .deputy-card { height: 460px; }
+  .deputy-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .deputy-card { aspect-ratio: 4 / 5; max-height: 500px; }
+  .deputy-card h4 { font-size: 1.2rem; }
+  .deputy-quote { font-size: 0.85rem; }
   .pathway-detail-grid { grid-template-columns: 1fr; }
   .pathway-filter-tabs { flex-wrap: wrap; gap: 0.5rem; }
   .principal-hero { min-height: 560px; }
