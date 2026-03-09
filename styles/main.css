@@ -3897,6 +3897,163 @@ p { margin-bottom: 1rem; }
   margin-bottom: 0.8rem;
 }
 
+/* Redesigned Principal Section - No Overlay */
+.about-principal--redesigned {
+  min-height: 700px;
+  display: block;
+  background: var(--light);
+}
+
+.about-principal--redesigned .principal-backdrop {
+  width: 100%;
+  height: 100%;
+}
+
+.about-principal--redesigned .principal-backdrop img {
+  object-position: top center;
+}
+
+.principal-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 13, 22, 0.95) 0%,
+    rgba(26, 13, 22, 0.9) 60%,
+    rgba(26, 13, 22, 0.7) 85%,
+    transparent 100%
+  );
+  padding: 3rem;
+}
+
+.principal-quote-panel {
+  max-width: 450px;
+  padding-left: 1rem;
+}
+
+.principal-quote-panel .section-badge {
+  background: rgba(200, 151, 42, 0.2);
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.principal-quote-panel .quote-mark {
+  font-size: 5rem;
+  margin-bottom: -1.5rem;
+  text-align: left;
+}
+
+.principal-quote-panel .principal-quote {
+  text-align: left;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
+.principal-quote-panel .principal-attribution {
+  justify-content: flex-start;
+}
+
+/* Cards strip at bottom */
+.principal-cards-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 1.5rem 0;
+  background: linear-gradient(to top, rgba(26, 13, 22, 0.85), transparent);
+}
+
+.principal-message-grid--compact {
+  max-width: 100%;
+  gap: 1.5rem;
+}
+
+.message-card--light {
+  background: var(--white);
+  border: none;
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.message-card--light h4 {
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.message-card--light p {
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.message-card--light:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive for redesigned principal */
+@media (max-width: 1024px) {
+  .principal-content-wrapper {
+    width: 55%;
+  }
+  
+  .principal-message-grid--compact {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .message-card--light {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-principal--redesigned {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-principal--redesigned .principal-backdrop {
+    position: relative;
+    height: 350px;
+  }
+  
+  .principal-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: var(--dark);
+    padding: 2rem;
+  }
+  
+  .principal-quote-panel {
+    max-width: 100%;
+    padding-left: 0;
+  }
+  
+  .principal-cards-strip {
+    position: relative;
+    background: var(--primary);
+    padding: 2rem 0;
+  }
+  
+  .principal-message-grid--compact {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 500px;
+  }
+}
+
 .message-card p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
