@@ -681,6 +681,12 @@ p { margin-bottom: 1rem; }
   animation: kenBurns 25s ease infinite alternate;
 }
 
+.hero-slide-bg--contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 @keyframes kenBurns {
   0% { transform: scale(1.02); }
   100% { transform: scale(1.06); }
