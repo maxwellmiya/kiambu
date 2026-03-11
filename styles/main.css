@@ -5559,10 +5559,24 @@ p { margin-bottom: 1rem; }
 }
 
 .page-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(107, 29, 74, 0.75), rgba(26, 13, 22, 0.65));
-  z-index: 1;
+  display: none;
+}
+
+/* Pathway hero text shadows for readability */
+.page-hero--pathway .page-hero-content {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.page-hero--pathway .section-label {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.page-hero--pathway h1 {
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.page-hero--pathway .hero-sub {
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9);
 }
 
 .page-hero--pathway .page-hero-content {
@@ -5748,63 +5762,123 @@ p { margin-bottom: 1rem; }
   margin-top: 3rem;
 }
 
+/* Redesigned Pathway Subject Cards */
 .pathway-subject-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(107, 29, 74, 0.08);
-  transition: var(--transition);
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(107, 29, 74, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pathway-subject-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--secondary), var(--gold), var(--secondary-light));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pathway-subject-card:hover::before {
+  opacity: 1;
 }
 
 .pathway-subject-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(107, 29, 74, 0.15), 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
 }
 
 .pathway-subject-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(107, 29, 74, 0.25);
 }
 
 .pathway-subject-card h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--primary);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--accent);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: none;
+  position: relative;
+}
+
+.pathway-subject-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--secondary));
+  border-radius: 2px;
 }
 
 .pathway-subject-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.pathway-subject-item {
+  padding: 1rem;
+  background: rgba(200, 151, 42, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid var(--gold);
+  transition: all 0.3s ease;
+}
+
+.pathway-subject-item:hover {
+  background: rgba(200, 151, 42, 0.1);
+  transform: translateX(5px);
 }
 
 .pathway-subject-item h4 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--secondary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .pathway-subject-item p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text);
-  opacity: 0.8;
-  line-height: 1.5;
+  opacity: 0.85;
+  line-height: 1.6;
 }
 
 .pathway-subject-footer {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px dashed var(--accent);
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(200, 151, 42, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .pathway-subject-footer span {
-  font-size: 0.85rem;
-  color: var(--primary);
-  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* CBC Note */
