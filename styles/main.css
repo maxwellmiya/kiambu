@@ -5712,6 +5712,7 @@ p { margin-bottom: 1rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .hos-card h4 {
@@ -6199,7 +6200,7 @@ p { margin-bottom: 1rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: top;
   z-index: 0;
 }
 
