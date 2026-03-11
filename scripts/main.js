@@ -463,4 +463,131 @@
     }, 5000);
   }
 
+  // ── Pathway Gallery Slideshows ──────────────────────────
+  document.querySelectorAll('.pathway-slideshow').forEach(slideshow => {
+    const container = slideshow.querySelector('.pathway-slideshow-container');
+    const slides = slideshow.querySelectorAll('.pathway-slide');
+    const dotsContainer = slideshow.querySelector('.pathway-slideshow-dots');
+    const prevBtn = slideshow.querySelector('.pathway-slideshow-arrow--prev');
+    const nextBtn = slideshow.querySelector('.pathway-slideshow-arrow--next');
+    const counterCurrent = slideshow.querySelector('.pathway-slideshow-counter .current');
+    const counterTotal = slideshow.querySelector('.pathway-slideshow-counter .total');
+    
+    if (slides.length === 0) return;
+    
+    let currentIndex = 0;
+    let autoPlayInterval;
+    let isPaused = false;
+    const slideCount = slides.length;
+    
+    // Update counter total
+    if (counterTotal) counterTotal.textContent = slideCount;
+    
+    // Create dots
+    if (dotsContainer) {
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = 'pathway-slideshow-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          resetAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+    
+    const dots = slideshow.querySelectorAll('.pathway-slideshow-dot');
+    
+    function goToSlide(index) {
+      // Handle wrapping
+      if (index < 0) index = slideCount - 1;
+      if (index >= slideCount) index = 0;
+      
+      // Update slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+      
+      // Update dots
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[index]) dots[index].classList.add('active');
+      
+      // Update counter
+      if (counterCurrent) counterCurrent.textContent = index + 1;
+      
+      currentIndex = index;
+    }
+    
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+    
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+    
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        if (!isPaused) nextSlide();
+      }, 4000);
+    }
+    
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+    
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+      });
+    }
+    
+    // Pause on hover
+    slideshow.addEventListener('mouseenter', () => { isPaused = true; });
+    slideshow.addEventListener('mouseleave', () => { isPaused = false; });
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    container.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+        resetAutoPlay();
+      }
+    }, { passive: true });
+    
+    // Keyboard navigation
+    slideshow.setAttribute('tabindex', '0');
+    slideshow.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoPlay();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoPlay();
+      }
+    });
+    
+    // Start auto-play
+    startAutoPlay();
+  });
+
 })();

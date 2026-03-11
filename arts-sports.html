@@ -237,31 +237,47 @@
       <h2 class="section-title section-title-center reveal" style="color: var(--white);">Arts &amp; Sports at Kiambu High</h2>
     </div>
 
-    <div class="pathway-gallery reveal">
-      <div class="pathway-gallery-item pathway-gallery-item--large">
-        <img src="images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO-3.jpg" alt="Music Class" loading="lazy">
-        <div class="pathway-gallery-caption">Choir Practice</div>
+    <div class="pathway-slideshow reveal" id="artsSportsSlideshow">
+      <div class="pathway-slideshow-container">
+        <div class="pathway-slide active">
+          <img src="images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO-3.jpg" alt="Music Class">
+          <div class="pathway-slide-caption"><h4>Choir Practice</h4></div>
+        </div>
+        <div class="pathway-slide">
+          <img src="images/gallery/sports/RUGBY.jpg" alt="Rugby">
+          <div class="pathway-slide-caption"><h4>Rugby Team</h4></div>
+        </div>
+        <div class="pathway-slide">
+          <img src="images/gallery/arts/DRAMA CLUB.jpg" alt="Drama Club">
+          <div class="pathway-slide-caption"><h4>Drama Club</h4></div>
+        </div>
+        <div class="pathway-slide">
+          <img src="images/gallery/sports/SWIMMING POOL.jpg" alt="Swimming Pool">
+          <div class="pathway-slide-caption"><h4>Swimming Training</h4></div>
+        </div>
+        <div class="pathway-slide">
+          <img src="images/gallery/sports/BASKETBALL.jpg" alt="Basketball">
+          <div class="pathway-slide-caption"><h4>Basketball Court</h4></div>
+        </div>
+        <div class="pathway-slide">
+          <img src="images/gallery/sports/VOLLEYBALL.jpg" alt="Volleyball">
+          <div class="pathway-slide-caption"><h4>Volleyball Championships</h4></div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button class="pathway-slideshow-arrow pathway-slideshow-arrow--prev" aria-label="Previous slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="pathway-slideshow-arrow pathway-slideshow-arrow--next" aria-label="Next slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Counter -->
+        <div class="pathway-slideshow-counter"><span class="current">1</span> / <span class="total">6</span></div>
       </div>
-      <div class="pathway-gallery-item">
-        <img src="images/gallery/sports/RUGBY.jpg" alt="Rugby" loading="lazy">
-        <div class="pathway-gallery-caption">Rugby Team</div>
-      </div>
-      <div class="pathway-gallery-item">
-        <img src="images/gallery/arts/DRAMA CLUB.jpg" alt="Drama Club" loading="lazy">
-        <div class="pathway-gallery-caption">Drama Club</div>
-      </div>
-      <div class="pathway-gallery-item">
-        <img src="images/gallery/sports/SWIMMING POOL.jpg" alt="Swimming Pool" loading="lazy">
-        <div class="pathway-gallery-caption">Swimming Training</div>
-      </div>
-      <div class="pathway-gallery-item">
-        <img src="images/gallery/sports/BASKETBALL.jpg" alt="Basketball" loading="lazy">
-        <div class="pathway-gallery-caption">Basketball Court</div>
-      </div>
-      <div class="pathway-gallery-item pathway-gallery-item--large">
-        <img src="images/gallery/sports/VOLLEYBALL.jpg" alt="Volleyball" loading="lazy">
-        <div class="pathway-gallery-caption">Volleyball Championships</div>
-      </div>
+      
+      <!-- Dots Navigation -->
+      <div class="pathway-slideshow-dots"></div>
     </div>
   </div>
 </section>

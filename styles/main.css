@@ -5966,6 +5966,218 @@ p { margin-bottom: 1rem; }
   transform: translateY(0);
 }
 
+/* Pathway Gallery Slideshow */
+.pathway-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--dark);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.pathway-slideshow-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.pathway-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.pathway-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.pathway-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pathway-slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: var(--white);
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.pathway-slide-caption h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Slideshow Navigation Arrows */
+.pathway-slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.pathway-slideshow:hover .pathway-slideshow-arrow {
+  opacity: 1;
+}
+
+.pathway-slideshow-arrow:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.pathway-slideshow-arrow--prev { left: 1rem; }
+.pathway-slideshow-arrow--next { right: 1rem; }
+
+/* Slideshow Dots/Indicators */
+.pathway-slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.4);
+  flex-wrap: wrap;
+}
+
+.pathway-slideshow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.pathway-slideshow-dot:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+.pathway-slideshow-dot.active {
+  background: var(--secondary);
+  transform: scale(1.3);
+}
+
+/* Slideshow Counter */
+.pathway-slideshow-counter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  color: var(--white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/* Slideshow Thumbnails Preview (optional) */
+.pathway-slideshow-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(0,0,0,0.5);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) transparent;
+}
+
+.pathway-slideshow-thumbnails::-webkit-scrollbar {
+  height: 4px;
+}
+
+.pathway-slideshow-thumbnails::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.pathway-slideshow-thumb {
+  flex-shrink: 0;
+  width: 60px;
+  height: 45px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pathway-slideshow-thumb:hover {
+  opacity: 0.8;
+}
+
+.pathway-slideshow-thumb.active {
+  opacity: 1;
+  border-color: var(--secondary);
+}
+
+.pathway-slideshow-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Slideshow */
+@media (max-width: 768px) {
+  .pathway-slideshow {
+    border-radius: var(--radius);
+  }
+  
+  .pathway-slideshow-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    opacity: 1;
+  }
+  
+  .pathway-slideshow-arrow--prev { left: 0.5rem; }
+  .pathway-slideshow-arrow--next { right: 0.5rem; }
+  
+  .pathway-slide-caption h4 {
+    font-size: 1rem;
+  }
+  
+  .pathway-slideshow-thumbnails {
+    display: none;
+  }
+}
+
 /* Achievements Section */
 .pathway-achievements-section {
   padding: 5rem 0;
