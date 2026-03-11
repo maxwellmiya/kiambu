@@ -7063,8 +7063,8 @@ p { margin-bottom: 1rem; }
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80') center/cover no-repeat;
-  opacity: 0.15;
+  background: url('../images/gallery/school life/SCHOOL LIFE 2.jpg') center/cover no-repeat;
+  opacity: 0.25;
   z-index: 0;
 }
 
@@ -7094,27 +7094,18 @@ p { margin-bottom: 1rem; }
 
 /* Facility Cards with Background Images */
 .facilities-section .facility-card {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent;
   position: relative;
   min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;
 }
 
 .facilities-section .facility-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
-  z-index: 1;
+  display: none;
 }
 
 .facilities-section .facility-card > * {
