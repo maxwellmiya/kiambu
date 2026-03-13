@@ -171,7 +171,7 @@
 </section>
 
 <!-- ============================================
-     JOURNEY TIMELINE
+     JOURNEY TIMELINE - HORIZONTAL INFINITE SCROLL
      ============================================ -->
 <section class="about-journey" id="journeySection">
   <div class="journey-bg-pattern"></div>
@@ -181,102 +181,311 @@
       <h2 class="section-title">Milestones That <span class="text-gradient">Define Us</span></h2>
       <p class="section-subtitle">Five decades of growth, achievement, and transformation</p>
     </div>
-    
-    <div class="journey-timeline journey-timeline--animated">
-      <div class="timeline-line timeline-line--animated"></div>
-      
-      <div class="timeline-item timeline-item--left timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">💡</div>
-          <span class="timeline-year">1968</span>
+  </div>
+  
+  <!-- Horizontal Timeline -->
+  <div class="timeline-horizontal-wrapper">
+    <div class="timeline-horizontal-track" id="timelineTrack">
+      <!-- Timeline items will be duplicated by JS for infinite scroll -->
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">💡</div>
+          <span class="timeline-h-year">1968</span>
           <h4>The Vision Begins</h4>
-          <p>Kiambu leaders and prominent citizens conceive the idea of establishing a district secondary school to serve the growing community.</p>
+          <p>Kiambu leaders and prominent citizens conceive the idea of establishing a district secondary school.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--right timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🏫</div>
-          <span class="timeline-year">1971</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🏫</div>
+          <span class="timeline-h-year">1971</span>
           <h4>Doors Open</h4>
-          <p>Kiambu High School opens on a 35-acre campus, built under the Open Plan System with Canadian development assistance.</p>
+          <p>School opens on a 35-acre campus, built under the Open Plan System with Canadian development assistance.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--left timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🎓</div>
-          <span class="timeline-year">1975</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🎓</div>
+          <span class="timeline-h-year">1975</span>
           <h4>First Graduates</h4>
-          <p>The inaugural cohort sits for the Kenya Certificate of Education (KCE), marking our first academic milestone.</p>
+          <p>The inaugural cohort sits for the Kenya Certificate of Education (KCE), marking our first milestone.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--right timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🔄</div>
-          <span class="timeline-year">1993</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🔄</div>
+          <span class="timeline-h-year">1993</span>
           <h4>A New Identity</h4>
-          <p>School transitions from mixed to an all-boys institution, strengthening focus and building unique traditions.</p>
+          <p>School transitions from mixed to an all-boys institution, strengthening focus and building traditions.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--left timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🏠</div>
-          <span class="timeline-year">2012</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🏠</div>
+          <span class="timeline-h-year">2012</span>
           <h4>Expanding Horizons</h4>
           <p>Construction of the ESP hostel significantly expands boarding capacity to accommodate more students.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--right timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🏊</div>
-          <span class="timeline-year">2018</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🏊</div>
+          <span class="timeline-h-year">2018</span>
           <h4>Making Waves</h4>
           <p>Semi-Olympic swimming pool launched — a first among Kiambu County schools, enhancing sports facilities.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--left timeline-reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-icon">🏔️</div>
-          <span class="timeline-year">2019</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card">
+          <div class="timeline-h-icon">🏔️</div>
+          <span class="timeline-h-year">2019</span>
           <h4>Growing Stronger</h4>
-          <p>New dormitory block completed, bringing total to 13 houses named after famous mountains across the world.</p>
+          <p>New dormitory block completed, bringing total to 13 houses named after famous mountains worldwide.</p>
         </div>
+        <div class="timeline-h-dot"></div>
       </div>
       
-      <div class="timeline-item timeline-item--right timeline-reveal">
-        <div class="timeline-dot timeline-dot--highlight"></div>
-        <div class="timeline-content timeline-content--highlight">
-          <div class="timeline-icon">📚</div>
-          <span class="timeline-year">2023</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card timeline-h-card--highlight">
+          <div class="timeline-h-icon">📚</div>
+          <span class="timeline-h-year">2023</span>
           <h4>New Leadership Era</h4>
-          <p>Mr. Joshua Maina Ndiritu, Chief Principal; Competency-Based Curriculum (CBC) pathways launched for Grade 10.</p>
+          <p>Mr. Joshua Maina Ndiritu, Chief Principal; CBC pathways launched for Grade 10.</p>
         </div>
+        <div class="timeline-h-dot timeline-h-dot--highlight"></div>
       </div>
       
-      <div class="timeline-item timeline-item--left timeline-reveal">
-        <div class="timeline-dot timeline-dot--current"></div>
-        <div class="timeline-content timeline-content--current">
-          <div class="timeline-icon">🏆</div>
-          <span class="timeline-year">2025</span>
+      <div class="timeline-h-item">
+        <div class="timeline-h-card timeline-h-card--current">
+          <div class="timeline-h-icon">🏆</div>
+          <span class="timeline-h-year">2025</span>
           <h4>Excellence Continues</h4>
           <p>KCSE 2025 — 402 candidates achieve Mean Grade 7.39 (B−) with 67.4% scoring C+ and above.</p>
         </div>
+        <div class="timeline-h-dot timeline-h-dot--current"></div>
       </div>
     </div>
+    
+    <!-- Timeline line -->
+    <div class="timeline-h-line"></div>
   </div>
 </section>
+
+<style>
+/* Horizontal Timeline Styles */
+.timeline-horizontal-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0 4rem;
+  margin-top: 2rem;
+}
+
+.timeline-h-line {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary), var(--secondary));
+  z-index: 1;
+}
+
+.timeline-horizontal-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollTimeline 40s linear infinite;
+  width: max-content;
+  padding: 0 2rem;
+}
+
+.timeline-horizontal-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollTimeline {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-h-item {
+  flex-shrink: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-h-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.4s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.timeline-h-card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--white);
+}
+
+.timeline-h-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(107, 29, 74, 0.15);
+}
+
+.timeline-h-card--highlight {
+  border: 2px solid var(--primary);
+}
+
+.timeline-h-card--current {
+  background: linear-gradient(135deg, var(--primary), #4a1535);
+  color: #fff;
+}
+
+.timeline-h-card--current::after {
+  border-top-color: var(--primary);
+}
+
+.timeline-h-card--current h4,
+.timeline-h-card--current p {
+  color: #fff;
+}
+
+.timeline-h-card--current .timeline-h-year {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.timeline-h-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-h-year {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-h-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-h-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.timeline-h-dot {
+  width: 18px;
+  height: 18px;
+  background: var(--secondary);
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(200, 151, 42, 0.3);
+  position: relative;
+  z-index: 3;
+}
+
+.timeline-h-dot--highlight {
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgba(107, 29, 74, 0.3);
+}
+
+.timeline-h-dot--current {
+  background: var(--secondary);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(200, 151, 42, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(200, 151, 42, 0.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-h-item {
+    width: 260px;
+  }
+  
+  .timeline-h-card {
+    min-height: 180px;
+    padding: 1.25rem;
+  }
+  
+  .timeline-h-icon {
+    font-size: 2rem;
+  }
+  
+  .timeline-h-card h4 {
+    font-size: 1rem;
+  }
+  
+  .timeline-h-card p {
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+<script>
+// Duplicate timeline items for seamless infinite scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('timelineTrack');
+  if (track) {
+    const items = track.innerHTML;
+    track.innerHTML = items + items; // Duplicate for seamless loop
+  }
+});
+</script>
 
 <!-- ============================================
      DEPUTY PRINCIPALS' MESSAGES
