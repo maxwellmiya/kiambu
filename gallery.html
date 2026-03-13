@@ -8,11 +8,388 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="canonical" href="https://kiambuhigh.sc.ke/gallery">
   <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* Gallery Page Specific Styles */
+    .gallery-page {
+      padding-top: 100px;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #faf8f9 0%, #f5f0f3 100%);
+    }
+
+    .gallery-header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+
+    .gallery-header h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Category Tabs */
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding: 1.5rem 0 2.5rem;
+      position: sticky;
+      top: 80px;
+      background: linear-gradient(to bottom, rgba(250,248,249,1) 0%, rgba(250,248,249,0.95) 100%);
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery-tab {
+      padding: 0.7rem 1.5rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid #e8e0e5;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-tab:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .gallery-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Photo Gallery */
+    .photo-gallery {
+      padding: 0 0 4rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .photo-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(107, 29, 74, 0.15);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .photo-card--wide {
+      grid-column: span 2;
+    }
+
+    .photo-card--wide img {
+      height: 280px;
+    }
+
+    .photo-card--tall {
+      grid-row: span 2;
+    }
+
+    .photo-card--tall img {
+      height: 100%;
+      min-height: 460px;
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 1rem 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+      color: #fff;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+    }
+
+    .photo-card:hover .photo-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-caption span {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Video Gallery Section */
+    .video-gallery {
+      background: linear-gradient(135deg, var(--primary) 0%, #4a1535 100%);
+      padding: 5rem 0;
+    }
+
+    .video-gallery-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .video-gallery-header .section-label {
+      color: var(--gold);
+    }
+
+    .video-gallery-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-gallery-header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+    }
+
+    .video-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .video-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 1.25rem;
+    }
+
+    .video-info h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .video-info span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Lightbox */
+    .gallery-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .gallery-lightbox.active {
+      display: flex;
+    }
+
+    .gallery-lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .gallery-lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .gallery-lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-lightbox-nav:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .gallery-lightbox-prev {
+      left: 2rem;
+    }
+
+    .gallery-lightbox-next {
+      right: 2rem;
+    }
+
+    .gallery-lightbox-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .video-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-page {
+        padding-top: 80px;
+      }
+
+      .gallery-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-card--wide {
+        grid-column: span 2;
+      }
+
+      .photo-card--tall {
+        grid-row: span 1;
+      }
+
+      .photo-card--tall img {
+        min-height: 220px;
+      }
+
+      .video-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-tabs {
+        top: 70px;
+        padding: 1rem 0.5rem 1.5rem;
+      }
+
+      .gallery-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card--wide {
+        grid-column: span 1;
+      }
+
+      .photo-card img,
+      .photo-card--wide img {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,7 +406,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- Header -->
-<header class="header transparent" id="mainHeader">
+<header class="header" id="mainHeader">
   <div class="header-inner">
     <nav class="nav-left">
       <a href="/about" class="nav-link">About Us</a>
@@ -76,288 +453,322 @@
   <a href="/contact">Contact</a>
 </div>
 
-<!-- ============================================
-     GALLERY CONTENT
-     ============================================ -->
-<div class="page-hero page-hero--has-bg" style="background-image: url('images/gallery/academics/ASSEMBLY.jpg');">
-  <div class="page-hero-content">
-    <p class="section-label">Visual Story</p>
-    <h1>How We Look</h1>
-    <p>A glimpse into life at Kiambu High School through photos and video.</p>
-  </div>
-</div>
-
-<section class="gallery-section">
+<!-- Gallery Page -->
+<main class="gallery-page">
   <div class="container">
-    <!-- Gallery Filters -->
-    <div class="gallery-filters" id="galleryFilters">
-      <button class="gallery-filter active" data-filter="all">All</button>
-      <button class="gallery-filter" data-filter="academics">Academics</button>
-      <button class="gallery-filter" data-filter="school life">School Life</button>
-      <button class="gallery-filter" data-filter="sports">Sports</button>
-      <button class="gallery-filter" data-filter="events">Events</button>
-      <button class="gallery-filter" data-filter="arts">Arts</button>
+    <!-- Header -->
+    <div class="gallery-header">
+      <h1>Our Gallery</h1>
+      <p>Capturing moments of excellence, growth, and community at Kiambu High School</p>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- Academics Section - Classes & Labs -->
-      <div class="gallery-item wide" data-category="academics">
-        <img src="images/gallery/academics/ASSEMBLY.jpg" alt="Morning Assembly" loading="lazy">
-        <div class="gallery-overlay"><span>Morning Assembly</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg" alt="Biology Lab" loading="lazy">
-        <div class="gallery-overlay"><span>Biology Lab - Form 3</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 3A - MR. WAIGANJO.jpg" alt="Form 3A Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 3A Classroom</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="academics">
-        <img src="images/gallery/academics/LIBRARY.jpg" alt="Library" loading="lazy">
-        <div class="gallery-overlay"><span>School Library</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10 COMPUTER CLASS - MR. PAUL.jpg" alt="Computer Lab" loading="lazy">
-        <div class="gallery-overlay"><span>Computer Lab</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 3B - MRS. CATHERINE MUNGAI.jpg" alt="Form 3B Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 3B Classroom</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="academics">
-        <img src="images/gallery/academics/FORM 3C - MR. SAMUEL KAMAU.jpg" alt="Form 3C Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 3C Classroom</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10 - POWER MECHANICS.jpg" alt="Power Mechanics" loading="lazy">
-        <div class="gallery-overlay"><span>Power Mechanics Workshop</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 3D - MS. AUDREY.jpg" alt="Form 3D Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 3D Classroom</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10A - MR. WAIGANJO.jpg" alt="Grade 10A" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10A Class</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 3E - MS. J.W WACHIRA.jpg" alt="Form 3E Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 3E Classroom</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 4 A- MR. MUTEMI.jpg" alt="Form 4A Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 4A Classroom</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10B - MRS. AUDREY.jpg" alt="Grade 10B" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10B Class</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 4 B - MR. MWANGI.jpg" alt="Form 4B Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 4B Classroom</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10C - MR. NJIRU.jpg" alt="Grade 10C" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10C Class</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 4 D - MR. KIARAGO.jpg" alt="Form 4D Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 4D Classroom</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10D - MS. MERCY BOSIBORI.jpg" alt="Grade 10D" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10D Class</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="academics">
-        <img src="images/gallery/academics/FORM 4 E- MS. PHOEBE.jpg" alt="Form 4E Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 4E Classroom</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10H - MRS. KIMANI.jpg" alt="Grade 10H" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10H Class</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/FORM 4 K- MR. GEORGE.jpg" alt="Form 4K Class" loading="lazy">
-        <div class="gallery-overlay"><span>Form 4K Classroom</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="academics">
-        <img src="images/gallery/academics/GRADE 10 E - CLASS DISCUSSION.jpg" alt="Class Discussion" loading="lazy">
-        <div class="gallery-overlay"><span>Grade 10E Discussion</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/ADMIN STAFF.jpg" alt="Admin Staff" loading="lazy">
-        <div class="gallery-overlay"><span>Administration Staff</span></div>
-      </div>
-      <div class="gallery-item" data-category="academics">
-        <img src="images/gallery/academics/LIBRARARIAN - MS.CHEPKEMOI.jpg" alt="Librarian" loading="lazy">
-        <div class="gallery-overlay"><span>School Librarian</span></div>
-      </div>
-
-      <!-- School Life -->
-      <div class="gallery-item tall" data-category="school life">
-        <img src="images/gallery/school life/AGRICULTURE.jpg" alt="Agriculture Programme" loading="lazy">
-        <div class="gallery-overlay"><span>Agriculture Programme</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="school life">
-        <img src="images/gallery/school life/SCHOOL BUSES.jpg" alt="School Buses" loading="lazy">
-        <div class="gallery-overlay"><span>School Buses</span></div>
-      </div>
-      <div class="gallery-item" data-category="school life">
-        <img src="images/gallery/school life/KITCHEN STAFF.jpg" alt="Kitchen Staff" loading="lazy">
-        <div class="gallery-overlay"><span>Kitchen Staff</span></div>
-      </div>
-      <div class="gallery-item" data-category="school life">
-        <img src="images/gallery/school life/BIOGAS PROJECT.jpg" alt="Biogas Project" loading="lazy">
-        <div class="gallery-overlay"><span>Biogas Project</span></div>
-      </div>
-
-      <!-- Sports -->
-      <div class="gallery-item" data-category="sports">
-        <img src="images/gallery/sports/RUGBY.jpg" alt="Rugby Match" loading="lazy">
-        <div class="gallery-overlay"><span>Rugby Match</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="sports">
-        <img src="images/gallery/sports/BASKETBALL.jpg" alt="Basketball" loading="lazy">
-        <div class="gallery-overlay"><span>Basketball</span></div>
-      </div>
-      <div class="gallery-item" data-category="sports">
-        <img src="images/gallery/sports/SWIMMING POOL.jpg" alt="Swimming Pool" loading="lazy">
-        <div class="gallery-overlay"><span>Semi-Olympic Swimming Pool</span></div>
-      </div>
-      <div class="gallery-item" data-category="sports">
-        <img src="images/gallery/sports/VOLLEYBALL.jpg" alt="Volleyball" loading="lazy">
-        <div class="gallery-overlay"><span>Volleyball</span></div>
-      </div>
-      <div class="gallery-item" data-category="sports">
-        <img src="images/gallery/sports/BADMINTON.jpg" alt="Badminton" loading="lazy">
-        <div class="gallery-overlay"><span>Badminton</span></div>
-      </div>
-
-      <!-- Arts -->
-      <div class="gallery-item" data-category="arts">
-        <img src="images/gallery/arts/DRAMA CLUB.jpg" alt="Drama Club" loading="lazy">
-        <div class="gallery-overlay"><span>Drama Club</span></div>
-      </div>
-      <div class="gallery-item" data-category="arts">
-        <img src="images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO.jpg" alt="Music Class" loading="lazy">
-        <div class="gallery-overlay"><span>Music Class</span></div>
-      </div>
-      <div class="gallery-item" data-category="arts">
-        <img src="images/gallery/arts/SCOUTS.jpg" alt="Scouts" loading="lazy">
-        <div class="gallery-overlay"><span>Scouts</span></div>
-      </div>
-      <div class="gallery-item" data-category="arts">
-        <img src="images/gallery/arts/ST.JOHN AMBULANCE.jpg" alt="St. John Ambulance" loading="lazy">
-        <div class="gallery-overlay"><span>St. John Ambulance</span></div>
-      </div>
-
-      <!-- Events -->
-      <div class="gallery-item wide" data-category="events">
-        <img src="images/gallery/events/new logo launch.jpg" alt="New Logo Launch" loading="lazy">
-        <div class="gallery-overlay"><span>New Logo Launch</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/new logo admin.jpg" alt="Logo Launch - Administration" loading="lazy">
-        <div class="gallery-overlay"><span>Administration at Logo Launch</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/new logo with pp.jpg" alt="Logo Launch with Principal" loading="lazy">
-        <div class="gallery-overlay"><span>Principal at Logo Launch</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="events">
-        <img src="images/gallery/events/20230722_115707.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/20230817_154048.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/20230817_154549.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="events">
-        <img src="images/gallery/events/20230818_102149.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/20240317_104618.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/20250322_141354.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item tall" data-category="events">
-        <img src="images/gallery/events/IMG20210610133302.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG20210613151620.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG20211116165809.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item wide" data-category="events">
-        <img src="images/gallery/events/IMG20220529074722.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG20220529074729.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG20220529074732.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG_20190603_165009_7.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="images/gallery/events/IMG_20190604_170847_8.webp" alt="School Event" loading="lazy">
-        <div class="gallery-overlay"><span>School Event</span></div>
-      </div>
+    <!-- Category Tabs -->
+    <div class="gallery-tabs" id="galleryTabs">
+      <button class="gallery-tab active" data-filter="all">All Photos</button>
+      <button class="gallery-tab" data-filter="academics">Academics</button>
+      <button class="gallery-tab" data-filter="school life">School Life</button>
+      <button class="gallery-tab" data-filter="sports">Sports</button>
+      <button class="gallery-tab" data-filter="events">Events</button>
+      <button class="gallery-tab" data-filter="arts">Arts &amp; Clubs</button>
     </div>
 
-    <!-- Video Section -->
-    <div class="video-section">
-      <div class="text-center">
-        <p class="section-label">Watch</p>
-        <h2 class="section-title section-title-center">Video Gallery</h2>
+    <!-- Photo Gallery Grid -->
+    <section class="photo-gallery">
+      <div class="photo-grid" id="photoGrid">
+        <!-- Academics -->
+        <div class="photo-card photo-card--wide" data-category="academics">
+          <img src="images/gallery/academics/ASSEMBLY.jpg" alt="Morning Assembly" loading="lazy">
+          <div class="photo-caption"><span>Morning Assembly</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg" alt="Biology Lab" loading="lazy">
+          <div class="photo-caption"><span>Biology Lab - Form 3</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 3A - MR. WAIGANJO.jpg" alt="Form 3A Class" loading="lazy">
+          <div class="photo-caption"><span>Form 3A Classroom</span></div>
+        </div>
+        <div class="photo-card photo-card--tall" data-category="academics">
+          <img src="images/gallery/academics/LIBRARY.jpg" alt="Library" loading="lazy">
+          <div class="photo-caption"><span>School Library</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10 COMPUTER CLASS - MR. PAUL.jpg" alt="Computer Lab" loading="lazy">
+          <div class="photo-caption"><span>Computer Lab</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 3B - MRS. CATHERINE MUNGAI.jpg" alt="Form 3B Class" loading="lazy">
+          <div class="photo-caption"><span>Form 3B Classroom</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="academics">
+          <img src="images/gallery/academics/FORM 3C - MR. SAMUEL KAMAU.jpg" alt="Form 3C Class" loading="lazy">
+          <div class="photo-caption"><span>Form 3C Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10 - POWER MECHANICS.jpg" alt="Power Mechanics" loading="lazy">
+          <div class="photo-caption"><span>Power Mechanics Workshop</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 3D - MS. AUDREY.jpg" alt="Form 3D Class" loading="lazy">
+          <div class="photo-caption"><span>Form 3D Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10A - MR. WAIGANJO.jpg" alt="Grade 10A" loading="lazy">
+          <div class="photo-caption"><span>Grade 10A Class</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 3E - MS. J.W WACHIRA.jpg" alt="Form 3E Class" loading="lazy">
+          <div class="photo-caption"><span>Form 3E Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 4 A- MR. MUTEMI.jpg" alt="Form 4A Class" loading="lazy">
+          <div class="photo-caption"><span>Form 4A Classroom</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10B - MRS. AUDREY.jpg" alt="Grade 10B" loading="lazy">
+          <div class="photo-caption"><span>Grade 10B Class</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 4 B - MR. MWANGI.jpg" alt="Form 4B Class" loading="lazy">
+          <div class="photo-caption"><span>Form 4B Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10C - MR. NJIRU.jpg" alt="Grade 10C" loading="lazy">
+          <div class="photo-caption"><span>Grade 10C Class</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 4 D - MR. KIARAGO.jpg" alt="Form 4D Class" loading="lazy">
+          <div class="photo-caption"><span>Form 4D Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10D - MS. MERCY BOSIBORI.jpg" alt="Grade 10D" loading="lazy">
+          <div class="photo-caption"><span>Grade 10D Class</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 4 E- MS. PHOEBE.jpg" alt="Form 4E Class" loading="lazy">
+          <div class="photo-caption"><span>Form 4E Classroom</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10H - MRS. KIMANI.jpg" alt="Grade 10H" loading="lazy">
+          <div class="photo-caption"><span>Grade 10H Class</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/FORM 4 K- MR. GEORGE.jpg" alt="Form 4K Class" loading="lazy">
+          <div class="photo-caption"><span>Form 4K Classroom</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="academics">
+          <img src="images/gallery/academics/GRADE 10 E - CLASS DISCUSSION.jpg" alt="Class Discussion" loading="lazy">
+          <div class="photo-caption"><span>Grade 10E Discussion</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/ADMIN STAFF.jpg" alt="Admin Staff" loading="lazy">
+          <div class="photo-caption"><span>Administration Staff</span></div>
+        </div>
+        <div class="photo-card" data-category="academics">
+          <img src="images/gallery/academics/LIBRARARIAN - MS.CHEPKEMOI.jpg" alt="Librarian" loading="lazy">
+          <div class="photo-caption"><span>School Librarian</span></div>
+        </div>
+
+        <!-- School Life -->
+        <div class="photo-card photo-card--tall" data-category="school life">
+          <img src="images/gallery/school life/AGRICULTURE.jpg" alt="Agriculture Programme" loading="lazy">
+          <div class="photo-caption"><span>Agriculture Programme</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="school life">
+          <img src="images/gallery/school life/SCHOOL BUSES.jpg" alt="School Buses" loading="lazy">
+          <div class="photo-caption"><span>School Buses</span></div>
+        </div>
+        <div class="photo-card" data-category="school life">
+          <img src="images/gallery/school life/KITCHEN STAFF.jpg" alt="Kitchen Staff" loading="lazy">
+          <div class="photo-caption"><span>Kitchen Staff</span></div>
+        </div>
+        <div class="photo-card" data-category="school life">
+          <img src="images/gallery/school life/BIOGAS PROJECT.jpg" alt="Biogas Project" loading="lazy">
+          <div class="photo-caption"><span>Biogas Project</span></div>
+        </div>
+
+        <!-- Sports -->
+        <div class="photo-card" data-category="sports">
+          <img src="images/gallery/sports/RUGBY.jpg" alt="Rugby Match" loading="lazy">
+          <div class="photo-caption"><span>Rugby Match</span></div>
+        </div>
+        <div class="photo-card photo-card--tall" data-category="sports">
+          <img src="images/gallery/sports/BASKETBALL.jpg" alt="Basketball" loading="lazy">
+          <div class="photo-caption"><span>Basketball</span></div>
+        </div>
+        <div class="photo-card" data-category="sports">
+          <img src="images/gallery/sports/SWIMMING POOL.jpg" alt="Swimming Pool" loading="lazy">
+          <div class="photo-caption"><span>Semi-Olympic Swimming Pool</span></div>
+        </div>
+        <div class="photo-card" data-category="sports">
+          <img src="images/gallery/sports/VOLLEYBALL.jpg" alt="Volleyball" loading="lazy">
+          <div class="photo-caption"><span>Volleyball</span></div>
+        </div>
+        <div class="photo-card" data-category="sports">
+          <img src="images/gallery/sports/BADMINTON.jpg" alt="Badminton" loading="lazy">
+          <div class="photo-caption"><span>Badminton</span></div>
+        </div>
+
+        <!-- Arts -->
+        <div class="photo-card" data-category="arts">
+          <img src="images/gallery/arts/DRAMA CLUB.jpg" alt="Drama Club" loading="lazy">
+          <div class="photo-caption"><span>Drama Club</span></div>
+        </div>
+        <div class="photo-card" data-category="arts">
+          <img src="images/gallery/arts/GRADE 10 MUSIC CLASS - MS. CHRISTINE KARONGO.jpg" alt="Music Class" loading="lazy">
+          <div class="photo-caption"><span>Music Class</span></div>
+        </div>
+        <div class="photo-card" data-category="arts">
+          <img src="images/gallery/arts/SCOUTS.jpg" alt="Scouts" loading="lazy">
+          <div class="photo-caption"><span>Scouts</span></div>
+        </div>
+        <div class="photo-card" data-category="arts">
+          <img src="images/gallery/arts/ST.JOHN AMBULANCE.jpg" alt="St. John Ambulance" loading="lazy">
+          <div class="photo-caption"><span>St. John Ambulance</span></div>
+        </div>
+
+        <!-- Events -->
+        <div class="photo-card photo-card--wide" data-category="events">
+          <img src="images/gallery/events/new logo launch.jpg" alt="New Logo Launch" loading="lazy">
+          <div class="photo-caption"><span>New Logo Launch</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/new logo admin.jpg" alt="Logo Launch - Administration" loading="lazy">
+          <div class="photo-caption"><span>Administration at Logo Launch</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/new logo with pp.jpg" alt="Logo Launch with Principal" loading="lazy">
+          <div class="photo-caption"><span>Principal at Logo Launch</span></div>
+        </div>
+        <div class="photo-card photo-card--tall" data-category="events">
+          <img src="images/gallery/events/20230722_115707.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/20230817_154048.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/20230817_154549.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="events">
+          <img src="images/gallery/events/20230818_102149.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/20240317_104618.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/20250322_141354.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG20210610133302.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG20210613151620.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG20211116165809.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card photo-card--wide" data-category="events">
+          <img src="images/gallery/events/IMG20220529074722.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG20220529074729.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG20220529074732.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG_20190603_165009_7.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
+        <div class="photo-card" data-category="events">
+          <img src="images/gallery/events/IMG_20190604_170847_8.webp" alt="School Event" loading="lazy">
+          <div class="photo-caption"><span>School Event</span></div>
+        </div>
       </div>
-      <div class="video-grid">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/DqxXsLzgTlQ" title="Kiambu High School Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/ou0_fa2BTYk" title="Kiambu High School Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/wPOdPVZ4v60" title="Kiambu High School Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-embed video-embed--tiktok">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@wambokenya/video/7391170738658495750" data-video-id="7391170738658495750" style="max-width: 100%; min-width: 100%;">
-            <section><a target="_blank" href="https://www.tiktok.com/@wambokenya">@wambokenya</a></section>
-          </blockquote>
-          <script async src="https://www.tiktok.com/embed.js"></script>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
-</section>
+
+  <!-- Video Gallery -->
+  <section class="video-gallery">
+    <div class="container">
+      <div class="video-gallery-header">
+        <p class="section-label">Watch</p>
+        <h2>Video Gallery</h2>
+        <p>Experience the vibrant spirit of Kiambu High School</p>
+      </div>
+
+      <div class="video-cards">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/DqxXsLzgTlQ" 
+              title="Kiambu High School" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h4>School Overview</h4>
+            <span>Kiambu High School</span>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/ou0_fa2BTYk" 
+              title="Kiambu High School" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h4>School Life</h4>
+            <span>Kiambu High School</span>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/wPOdPVZ4v60" 
+              title="Kiambu High School" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h4>School Activities</h4>
+            <span>Kiambu High School</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
-  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#10095;</button>
+<div class="gallery-lightbox" id="galleryLightbox">
+  <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="gallery-lightbox-nav gallery-lightbox-prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+  <button class="gallery-lightbox-nav gallery-lightbox-next" id="lightboxNext" aria-label="Next">&#10095;</button>
   <img src="" alt="" id="lightboxImg">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="gallery-lightbox-caption" id="lightboxCaption"></div>
 </div>
 
 <!-- Footer -->
@@ -414,5 +825,93 @@
 </button>
 
 <script src="scripts/main.js" defer></script>
+<script>
+  // Gallery Tab Filtering
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.gallery-tab');
+    const photos = document.querySelectorAll('.photo-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Update active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.dataset.filter;
+
+        // Filter photos
+        photos.forEach(photo => {
+          if (filter === 'all' || photo.dataset.category === filter) {
+            photo.style.display = 'block';
+            photo.style.animation = 'fadeIn 0.4s ease forwards';
+          } else {
+            photo.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    let currentIndex = 0;
+    let visiblePhotos = [];
+
+    function openLightbox(index) {
+      visiblePhotos = Array.from(photos).filter(p => p.style.display !== 'none');
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateLightbox() {
+      const photo = visiblePhotos[currentIndex];
+      const img = photo.querySelector('img');
+      const caption = photo.querySelector('.photo-caption span');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = caption ? caption.textContent : '';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function nextPhoto() {
+      currentIndex = (currentIndex + 1) % visiblePhotos.length;
+      updateLightbox();
+    }
+
+    function prevPhoto() {
+      currentIndex = (currentIndex - 1 + visiblePhotos.length) % visiblePhotos.length;
+      updateLightbox();
+    }
+
+    photos.forEach((photo, index) => {
+      photo.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxNext.addEventListener('click', nextPhoto);
+    lightboxPrev.addEventListener('click', prevPhoto);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextPhoto();
+      if (e.key === 'ArrowLeft') prevPhoto();
+    });
+  });
+</script>
 </body>
 </html>
