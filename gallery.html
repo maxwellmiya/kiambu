@@ -15,29 +15,63 @@
   <style>
     /* Gallery Page Specific Styles */
     .gallery-page {
-      padding-top: 100px;
+      padding-top: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #faf8f9 0%, #f5f0f3 100%);
     }
 
     .gallery-header {
+      position: relative;
       text-align: center;
-      padding: 3rem 0 2rem;
+      padding: 10rem 1rem 4rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #4a1535 100%);
+      overflow: hidden;
+    }
+
+    .gallery-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('images/gallery/academics/ASSEMBLY.jpg') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .gallery-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, #faf8f9, transparent);
+    }
+
+    .gallery-header-content {
+      position: relative;
+      z-index: 2;
     }
 
     .gallery-header h1 {
       font-family: var(--font-display);
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.2);
     }
 
     .gallery-header p {
-      font-size: 1.1rem;
-      color: #666;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
       max-width: 600px;
       margin: 0 auto;
+    }
+
+    .gallery-content {
+      background: linear-gradient(135deg, #faf8f9 0%, #f5f0f3 100%);
+      padding-top: 1rem;
     }
 
     /* Category Tabs */
@@ -455,35 +489,38 @@
 
 <!-- Gallery Page -->
 <main class="gallery-page">
-  <div class="container">
-    <!-- Header -->
-    <div class="gallery-header">
+  <!-- Header with background -->
+  <div class="gallery-header">
+    <div class="gallery-header-content">
       <h1>Our Gallery</h1>
       <p>Capturing moments of excellence, growth, and community at Kiambu High School</p>
     </div>
+  </div>
 
-    <!-- Category Tabs -->
-    <div class="gallery-tabs" id="galleryTabs">
-      <button class="gallery-tab active" data-filter="all">All Photos</button>
-      <button class="gallery-tab" data-filter="academics">Academics</button>
-      <button class="gallery-tab" data-filter="school life">School Life</button>
-      <button class="gallery-tab" data-filter="sports">Sports</button>
-      <button class="gallery-tab" data-filter="events">Events</button>
-      <button class="gallery-tab" data-filter="arts">Arts &amp; Clubs</button>
-    </div>
+  <div class="gallery-content">
+    <div class="container">
+      <!-- Category Tabs -->
+      <div class="gallery-tabs" id="galleryTabs">
+        <button class="gallery-tab active" data-filter="all">All Photos</button>
+        <button class="gallery-tab" data-filter="academics">Academics</button>
+        <button class="gallery-tab" data-filter="school life">School Life</button>
+        <button class="gallery-tab" data-filter="sports">Sports</button>
+        <button class="gallery-tab" data-filter="events">Events</button>
+        <button class="gallery-tab" data-filter="arts">Arts &amp; Clubs</button>
+      </div>
 
-    <!-- Photo Gallery Grid -->
-    <section class="photo-gallery">
-      <div class="photo-grid" id="photoGrid">
-        <!-- Academics -->
-        <div class="photo-card photo-card--wide" data-category="academics">
-          <img src="images/gallery/academics/ASSEMBLY.jpg" alt="Morning Assembly" loading="lazy">
-          <div class="photo-caption"><span>Morning Assembly</span></div>
-        </div>
-        <div class="photo-card" data-category="academics">
-          <img src="images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg" alt="Biology Lab" loading="lazy">
-          <div class="photo-caption"><span>Biology Lab - Form 3</span></div>
-        </div>
+      <!-- Photo Gallery Grid -->
+      <section class="photo-gallery">
+        <div class="photo-grid" id="photoGrid">
+          <!-- Academics -->
+          <div class="photo-card photo-card--wide" data-category="academics">
+            <img src="images/gallery/academics/ASSEMBLY.jpg" alt="Morning Assembly" loading="lazy">
+            <div class="photo-caption"><span>Morning Assembly</span></div>
+          </div>
+          <div class="photo-card" data-category="academics">
+            <img src="images/gallery/academics/FORM 3 BIOLOGY LAB - MR. MIGANDA-2.jpg" alt="Biology Lab" loading="lazy">
+            <div class="photo-caption"><span>Biology Lab - Form 3</span></div>
+          </div>
         <div class="photo-card" data-category="academics">
           <img src="images/gallery/academics/FORM 3A - MR. WAIGANJO.jpg" alt="Form 3A Class" loading="lazy">
           <div class="photo-caption"><span>Form 3A Classroom</span></div>
@@ -698,6 +735,7 @@
         </div>
       </div>
     </section>
+    </div>
   </div>
 
   <!-- Video Gallery -->
