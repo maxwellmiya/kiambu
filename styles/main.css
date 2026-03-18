@@ -7810,6 +7810,7 @@ p { margin-bottom: 1rem; }
   width: 100%;
   height: 250px;
   object-fit: cover;
+  object-position: top; /* This will center the image from the top */
 }
 
 .captain-info {
