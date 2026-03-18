@@ -7587,10 +7587,24 @@ p { margin-bottom: 1rem; }
   justify-content: flex-end;
   border: 1px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .facilities-section .facility-card::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(26, 13, 22, 0.85) 0%, rgba(107, 29, 74, 0.45) 100%);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.facilities-section .facility-card:hover::before {
+  background: linear-gradient(to top, rgba(26, 13, 22, 0.7) 0%, rgba(107, 29, 74, 0.3) 100%);
 }
 
 .facilities-section .facility-card > * {
