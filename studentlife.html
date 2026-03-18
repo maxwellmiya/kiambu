@@ -423,22 +423,65 @@
   </div>
 </section>
 
-<!-- Leadership Message -->
-<section class="leadership-message section">
+<!-- Leadership & Wellness Section -->
+<section class="leadership-wellness-section section section--light">
   <div class="container">
-    <div class="leadership-grid">
-      <div class="leadership-card reveal">
-        <div class="leadership-image">
-          <img src="https://placehold.co/400x500/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
-          <div class="leadership-accent"></div>
+    <div class="side-by-side-grid">
+      
+      <!-- Boarding Master Message -->
+      <div class="leadership-card-container reveal">
+        <div class="leadership-card">
+          <div class="leadership-image">
+            <img src="https://placehold.co/400x500/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
+            <div class="leadership-accent"></div>
+          </div>
+          <div class="leadership-content">
+            <p class="section-label">From Our Boarding Master</p>
+            <h3>A Nurturing Home Environment</h3>
+            <blockquote>"Our boarding facilities are designed to be a true home away from home, where every boy is known, valued, and guided toward his full potential."</blockquote>
+            <div class="leadership-name">
+              <strong>Mr. Michael Wachira</strong>
+              <span>Boarding Master &amp; Games Master</span>
+            </div>
+          </div>
         </div>
-        <div class="leadership-content">
-          <p class="section-label">From Our Boarding Master</p>
-          <h3>A Nurturing Home Environment</h3>
-          <blockquote>"At Kiambu High School, we believe that a well-rested, well-fed, and emotionally supported student is one who excels academically. Our boarding facilities are designed to be a true home away from home, where every boy is known, valued, and guided toward his full potential."</blockquote>
-          <div class="leadership-name">
-            <strong>Mr. Michael Wachira</strong>
-            <span>Boarding Master &amp; Games Master</span>
+      </div>
+      
+      <!-- Guidance & Counselling -->
+      <div class="wellness-content-container reveal reveal-delay-1">
+        <div class="wellness-content">
+          <p class="section-label">Wellbeing &amp; Support</p>
+          <h2 class="section-title">Guidance &amp; Counselling</h2>
+          <p class="lead-text-small">We prioritize the mental and emotional well-being of every student, providing a safe space to navigate challenges.</p>
+          <div class="wellness-services">
+            <div class="wellness-item">
+              <span class="wellness-icon">🧠</span>
+              <div>
+                <h4>Mental Health Support</h4>
+                <p>Confidential counselling services</p>
+              </div>
+            </div>
+            <div class="wellness-item">
+              <span class="wellness-icon">💬</span>
+              <div>
+                <h4>Peer Mentorship</h4>
+                <p>Senior students guide juniors</p>
+              </div>
+            </div>
+            <div class="wellness-item">
+              <span class="wellness-icon">🎯</span>
+              <div>
+                <h4>Career Guidance</h4>
+                <p>University & career pathway counselling</p>
+              </div>
+            </div>
+          </div>
+          <div class="wellness-profile-inline">
+            <img src="https://placehold.co/80x80/2a5c8a/ffffff?text=Counsellor" alt="Mrs. Catherine Kamau" loading="lazy">
+            <div class="wellness-profile-info">
+              <h4>Mrs. Catherine Kamau</h4>
+              <span>Head of Guidance &amp; Counselling</span>
+            </div>
           </div>
         </div>
       </div>
@@ -446,56 +489,68 @@
   </div>
 </section>
 
-<!-- Wellness & Support -->
-<section class="wellness-section section section--light">
-  <div class="container">
-    <div class="wellness-grid">
-      <div class="wellness-content reveal">
-        <p class="section-label">Wellbeing &amp; Support</p>
-        <h2 class="section-title">Guidance &amp; Counselling</h2>
-        <p class="lead-text">We prioritize the mental health and emotional well-being of every student. Our dedicated counselling department provides a safe space for students to navigate challenges and build resilience.</p>
-        <div class="wellness-services">
-          <div class="wellness-item">
-            <span class="wellness-icon">🧠</span>
-            <div>
-              <h4>Mental Health Support</h4>
-              <p>Confidential counselling and support services</p>
-            </div>
-          </div>
-          <div class="wellness-item">
-            <span class="wellness-icon">💬</span>
-            <div>
-              <h4>Peer Mentorship</h4>
-              <p>Senior students guide juniors through school life</p>
-            </div>
-          </div>
-          <div class="wellness-item">
-            <span class="wellness-icon">👨‍👩‍👦</span>
-            <div>
-              <h4>Parent Liaison</h4>
-              <p>Regular communication with families</p>
-            </div>
-          </div>
-          <div class="wellness-item">
-            <span class="wellness-icon">🎯</span>
-            <div>
-              <h4>Career Guidance</h4>
-              <p>University and career pathway counselling</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wellness-profile reveal reveal-delay-1">
-        <img src="https://placehold.co/400x500/2a5c8a/ffffff?text=Counsellor" alt="Mrs. Catherine Kamau — Head of Guidance &amp; Counselling" loading="lazy">
-        <div class="wellness-profile-info">
-          <h4>Mrs. Catherine Kamau</h4>
-          <span>Head of Guidance &amp; Counselling</span>
-          <p>"Every student's journey is unique. We're here to ensure each boy has the support he needs to thrive."</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<style>
+  .side-by-side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .leadership-card, .wellness-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .wellness-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .wellness-content .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .lead-text-small {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  .wellness-services {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+  .wellness-profile-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+  .wellness-profile-inline img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .wellness-profile-inline h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+  }
+   .wellness-profile-inline span {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  @media (max-width: 992px) {
+    .side-by-side-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 
 <!-- Student Leadership -->
 <section class="student-leadership-modern section">
@@ -510,7 +565,7 @@
     <div class="captains-showcase">
       <div class="captain-card reveal">
         <div class="captain-image">
-          <img src="https://placehold.co/350x400/6B1D4A/ffffff?text=School+Captain" alt="Brian Njoroge — School Captain" loading="lazy">
+          <img src="images/gallery/prefects/Emmanuel Njihia.jpg" alt="Emmanuel Njihia — School Captain" loading="lazy">
         </div>
         <div class="captain-info">
           <span class="captain-badge">School Captain</span>
@@ -520,7 +575,7 @@
       </div>
       <div class="captain-card reveal reveal-delay-1">
         <div class="captain-image">
-          <img src="https://placehold.co/350x400/8B2D5E/ffffff?text=Deputy+Captain" alt="Samuel Ochieng — Deputy School Captain" loading="lazy">
+          <img src="images/gallery/prefects/Samuel  kibiku.jpg" alt="Samuel Kibiku — Deputy School Captain" loading="lazy">
         </div>
         <div class="captain-info">
           <span class="captain-badge">Deputy School Captain</span>
