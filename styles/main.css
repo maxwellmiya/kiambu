@@ -3082,6 +3082,7 @@ p { margin-bottom: 1rem; }
 .activity-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
+  border-color: var(--secondary);
 }
 
 .activity-img {
@@ -4362,8 +4363,8 @@ p { margin-bottom: 1rem; }
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(107, 29, 74, 0.05) 0%, transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(200, 151, 42, 0.05) 0%, transparent 30%);
+    radial-gradient(circle at 20% 80%, rgba(107, 29, 74, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(200, 151, 42, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -4929,11 +4930,7 @@ p { margin-bottom: 1rem; }
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 13, 22, 0.7) 0%,
-    rgba(26, 13, 22, 0.9) 100%
-  );
+  background: linear-gradient(135deg, rgba(26, 13, 22, 0.9), rgba(107, 29, 74, 0.8));
   z-index: 1;
 }
 
@@ -5285,7 +5282,7 @@ p { margin-bottom: 1rem; }
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
 
@@ -5520,7 +5517,7 @@ p { margin-bottom: 1rem; }
   /* New values grid responsive */
   .values-grid-new {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
   .value-card-new {
@@ -6335,11 +6332,11 @@ p { margin-bottom: 1rem; }
   }
   
   .pathway-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
   
   .pathway-gallery-item--large {
-    grid-column: span 2;
+    grid-column: span 1;
   }
   
   .achievements-grid {
@@ -7749,76 +7746,42 @@ p { margin-bottom: 1rem; }
 }
 
 .wellness-services {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
-.wellness-item {
+.wellness-profile-inline {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  align-items: flex-start;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 
-.wellness-item .wellness-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
+.wellness-profile-inline img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.wellness-item h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--dark);
-  margin-bottom: 0.25rem;
+.wellness-profile-inline h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
 }
 
-.wellness-item p {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  margin: 0;
+ .wellness-profile-inline span {
+  font-size: 0.8rem;
+  color: #666;
 }
 
-.wellness-profile {
-  position: relative;
+@media (max-width: 992px) {
+  .side-by-side-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-.wellness-profile img {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-}
-
-.wellness-profile-info {
-  position: absolute;
-  bottom: -30px;
-  left: 20px;
-  right: 20px;
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-}
-
-.wellness-profile-info h4 {
-  font-size: 1.1rem;
-  color: var(--dark);
-  margin-bottom: 0.25rem;
-}
-
-.wellness-profile-info span {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.wellness-profile-info p {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  font-style: italic;
-  margin: 0;
-}
-
 /* Student Leadership Modern */
 .student-leadership-modern {
   background: linear-gradient(180deg, #fff 0%, #f8f6f4 100%);
@@ -8214,6 +8177,7 @@ p { margin-bottom: 1rem; }
   .principal-hero { min-height: 600px; }
   .principal-quote-float { max-width: 300px; padding: 1.5rem; }
   .principal-quote-float .quote-box { font-size: 0.95rem; }
+  .principal-bottom-strip { position: relative; background: rgba(26, 13, 22, 0.93); padding: 1.5rem; }
   .principal-bottom-cols { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .departments-grid { grid-template-columns: repeat(2, 1fr); }
   .activities-grid { grid-template-columns: repeat(2, 1fr); }
@@ -8239,11 +8203,8 @@ p { margin-bottom: 1rem; }
   .facilities-grid { grid-template-columns: repeat(2, 1fr); }
   .leadership-card { grid-template-columns: 1fr; }
   .leadership-image { max-height: 400px; }
-  .wellness-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .wellness-profile { order: -1; }
-  .captains-showcase { grid-template-columns: 1fr; gap: 2rem; }
-  .captain-card { grid-template-columns: 150px 1fr; }
-  .prefects-modern-grid { grid-template-columns: repeat(4, 1fr); }
+  .wellness-profile-inline { margin-top: 1.5rem; }
+  .captain-card { grid-template-columns: 1fr; }
   .prefects-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .voices-grid { grid-template-columns: repeat(2, 1fr); }
   .fees-card { grid-template-columns: 1fr; }
@@ -8332,7 +8293,7 @@ p { margin-bottom: 1rem; }
   .facilities-grid { grid-template-columns: 1fr; }
   .leadership-content { padding: 2rem; }
   .wellness-services { grid-template-columns: 1fr; }
-  .wellness-profile-info { position: relative; bottom: auto; left: auto; right: auto; margin-top: 1rem; }
+  .wellness-profile-inline { margin-top: 1.5rem; }
   .captain-card { grid-template-columns: 1fr; }
   .captain-image img { height: 200px; }
   .prefects-modern-grid { grid-template-columns: repeat(2, 1fr); }
