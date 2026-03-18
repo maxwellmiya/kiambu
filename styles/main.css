@@ -61,6 +61,14 @@ img {
   display: block;
 }
 
+/* Fix for logo backgrounds */
+.loader-logo-img,
+.header-logo-img,
+.footer-logo-img,
+.about-logo-watermark img {
+  background-color: transparent !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
