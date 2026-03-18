@@ -233,68 +233,55 @@
       <p class="section-subtitle reveal">Each house named after Africa's majestic mountains, fostering pride and healthy competition</p>
     </div>
     <div class="houses-grid">
-      <div class="house-card reveal">
-        <div class="house-icon">🏔️</div>
+      <div class="house-card reveal" style="background-image: url('https://source.unsplash.com/400x300/?mount-kenya')">
         <h4>Kenya</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-1">
-        <div class="house-icon">🗻</div>
+      <div class="house-card reveal reveal-delay-1" style="background-image: url('https://source.unsplash.com/400x300/?kilimanjaro')">
         <h4>Kilimanjaro</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-2">
-        <div class="house-icon">⛰️</div>
+      <div class="house-card reveal reveal-delay-2" style="background-image: url('https://source.unsplash.com/400x300/?ruwenzori-mountains')">
         <h4>Ruwenzori</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal">
-        <div class="house-icon">🏔️</div>
+      <div class="house-card reveal" style="background-image: url('https://source.unsplash.com/400x300/?adamawa-plateau')">
         <h4>Adamawa</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-1">
-        <div class="house-icon">🗻</div>
+      <div class="house-card reveal reveal-delay-1" style="background-image: url('https://source.unsplash.com/400x300/?mount-elgon')">
         <h4>Elgon</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-2">
-        <div class="house-icon">⛰️</div>
+      <div class="house-card reveal reveal-delay-2" style="background-image: url('https://source.unsplash.com/400x300/?mount-longonot')">
         <h4>Longonot</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal">
-        <div class="house-icon">🏔️</div>
+      <div class="house-card reveal" style="background-image: url('https://source.unsplash.com/400x300/?menengai-crater')">
         <h4>Menengai</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-1">
-        <div class="house-icon">🗻</div>
+      <div class="house-card reveal reveal-delay-1" style="background-image: url('https://source.unsplash.com/400x300/?aberdare-ranges')">
         <h4>Aberdare</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-2">
-        <div class="house-icon">⛰️</div>
+      <div class="house-card reveal reveal-delay-2" style="background-image: url('https://source.unsplash.com/400x300/?usambara-mountains')">
         <h4>Usambara</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal">
-        <div class="house-icon">🏔️</div>
+      <div class="house-card reveal" style="background-image: url('https://source.unsplash.com/400x300/?mount-suswa')">
         <h4>Suswa</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-1">
-        <div class="house-icon">🗻</div>
+      <div class="house-card reveal reveal-delay-1" style="background-image: url('https://source.unsplash.com/400x300/?satima-peak')">
         <h4>Satima</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card reveal reveal-delay-2">
-        <div class="house-icon">⛰️</div>
+      <div class="house-card reveal reveal-delay-2" style="background-image: url('https://source.unsplash.com/400x300/?kilimambogo-hill')">
         <h4>Kilimambago</h4>
         <span class="house-type">Mountain House</span>
       </div>
-      <div class="house-card house-card--highlight reveal">
-        <div class="house-icon">🏔️</div>
+      <div class="house-card house-card--highlight reveal" style="background-image: url('https://source.unsplash.com/400x300/?marsabit-forest')">
         <h4>Marsabit</h4>
         <span class="house-type">Mountain House</span>
       </div>
@@ -303,7 +290,62 @@
       <p>Each house is supervised by dedicated housemasters who ensure student welfare, discipline, and mentorship.</p>
     </div>
   </div>
-</section>-->
+</section>
+
+<!-- Page-specific styles for house cards -->
+<style>
+  .house-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 2rem 1rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    overflow: hidden;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border-radius: var(--radius);
+  }
+  .house-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(107, 29, 74, 0.8), rgba(26, 13, 22, 0.85));
+    z-index: 1;
+    transition: background 0.4s ease;
+  }
+  .house-card:hover::before {
+    background: linear-gradient(135deg, rgba(107, 29, 74, 0.6), rgba(26, 13, 22, 0.7));
+  }
+  .house-card .house-icon {
+    display: none; /* Hide the icon */
+  }
+  .house-card h4, .house-card .house-type {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+  }
+  .house-card h4 {
+    color: #fff !important;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .house-card .house-type {
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.25);
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+</style>
 
 <!-- Facilities Grid -->
 <section class="facilities-section section">
