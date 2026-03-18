@@ -424,70 +424,122 @@
 </section>
 
 <!-- Leadership & Wellness Section -->
-<section class="leadership-wellness-section section section--light">
+<section class="section section--light">
   <div class="container">
-    <div class="side-by-side-grid">
-      
-      <!-- Boarding Master Message -->
-      <div class="leadership-card-container reveal">
-        <div class="leadership-card">
-          <div class="leadership-image">
-            <img src="https://placehold.co/400x500/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
-            <div class="leadership-accent"></div>
-          </div>
-          <div class="leadership-content">
-            <p class="section-label">From Our Boarding Master</p>
-            <h3>A Nurturing Home Environment</h3>
-            <blockquote>"Our boarding facilities are designed to be a true home away from home, where every boy is known, valued, and guided toward his full potential."</blockquote>
-            <div class="leadership-name">
-              <strong>Mr. Michael Wachira</strong>
-              <span>Boarding Master &amp; Games Master</span>
-            </div>
-          </div>
+    <div class="lw-grid">
+
+      <!-- Boarding Master Card -->
+      <div class="lw-card reveal">
+        <div class="lw-card__header">
+          <img src="https://placehold.co/400x500/6B1D4A/ffffff?text=Boarding+Master" alt="Mr. Michael Wachira — Boarding Master" loading="lazy">
+        </div>
+        <div class="lw-card__body">
+          <p class="section-label">From Our Boarding Master</p>
+          <h3>A Nurturing Home</h3>
+          <p>"Our boarding facilities are designed to be a true home away from home, where every boy is known, valued, and guided toward his full potential."</p>
+        </div>
+        <div class="lw-card__footer">
+          <strong>Mr. Michael Wachira</strong>
+          <span>Boarding Master &amp; Games Master</span>
         </div>
       </div>
-      
-      <!-- Guidance & Counselling -->
-      <div class="wellness-content-container reveal reveal-delay-1">
-        <div class="wellness-content">
-          <p class="section-label">Wellbeing &amp; Support</p>
-          <h2 class="section-title">Guidance &amp; Counselling</h2>
-          <p class="lead-text-small">We prioritize the mental and emotional well-being of every student, providing a safe space to navigate challenges.</p>
-          <div class="wellness-services">
-            <div class="wellness-item">
-              <span class="wellness-icon">🧠</span>
-              <div>
-                <h4>Mental Health Support</h4>
-                <p>Confidential counselling services</p>
-              </div>
-            </div>
-            <div class="wellness-item">
-              <span class="wellness-icon">💬</span>
-              <div>
-                <h4>Peer Mentorship</h4>
-                <p>Senior students guide juniors</p>
-              </div>
-            </div>
-            <div class="wellness-item">
-              <span class="wellness-icon">🎯</span>
-              <div>
-                <h4>Career Guidance</h4>
-                <p>University & career pathway counselling</p>
-              </div>
-            </div>
-          </div>
-          <div class="wellness-profile-inline">
-            <img src="https://placehold.co/80x80/2a5c8a/ffffff?text=Counsellor" alt="Mrs. Catherine Kamau" loading="lazy">
-            <div class="wellness-profile-info">
-              <h4>Mrs. Catherine Kamau</h4>
-              <span>Head of Guidance &amp; Counselling</span>
-            </div>
-          </div>
+
+      <!-- Guidance & Counselling Card -->
+      <div class="lw-card reveal reveal-delay-1">
+        <div class="lw-card__header">
+            <img src="https://placehold.co/400x500/2a5c8a/ffffff?text=Counsellor" alt="Mrs. Catherine Kamau — Head of Guidance &amp; Counselling" loading="lazy">
+        </div>
+        <div class="lw-card__body">
+          <p class="section-label">Wellbeing & Support</p>
+          <h3>Guidance & Counselling</h3>
+          <p>"We prioritize the mental and emotional well-being of every student, providing a safe space to navigate challenges and build resilience."</p>
+        </div>
+        <div class="lw-card__footer">
+          <strong>Mrs. Catherine Kamau</strong>
+          <span>Head of Guidance &amp; Counselling</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<style>
+.lw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.lw-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.lw-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.lw-card__header {
+  height: 250px;
+}
+
+.lw-card__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lw-card__body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.lw-card__body .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.lw-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lw-card__body p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.lw-card__footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.lw-card__footer strong {
+  display: block;
+  font-weight: 700;
+}
+
+.lw-card__footer span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@media (max-width: 992px) {
+  .lw-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 <!-- Student Leadership -->
 <section class="student-leadership-modern section">
