@@ -55,7 +55,13 @@
     <nav class="nav-right">
       <a href="/studentlife" class="nav-link">Student Life</a>
       <a href="/gallery" class="nav-link">How We Look</a>
-      <a href="/contact" class="nav-link">Contact</a>
+      <div class="nav-dropdown">
+        <a href="/contact" class="nav-link nav-link--parent">Contact <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-menu">
+          <a href="/contact" class="nav-dropdown-item">Contact</a>
+          <a href="/tenders" class="nav-dropdown-item">Supplier Tenders</a>
+        </div>
+      </div>
     </nav>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -77,6 +83,7 @@
   <a href="/studentlife">Student Life</a>
   <a href="/gallery">How We Look</a>
   <a href="/contact">Contact</a>
+  <a href="/tenders" class="mobile-nav-sub">— Supplier Tenders</a>
 </div>
 
 <!-- Page Hero -->
@@ -401,6 +408,7 @@
         <a href="/social-sciences">Social Sciences</a>
         <a href="/arts-sports">Arts &amp; Sports</a>
         <a href="/contact">Contact Us</a>
+        <a href="/tenders">Supplier Tenders</a>
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
@@ -425,3 +433,6 @@
 <script src="scripts/main.js" defer></script>
 </body>
 </html>
+
+
+
