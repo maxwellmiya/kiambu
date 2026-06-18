@@ -8323,6 +8323,64 @@ p { margin-bottom: 1rem; }
   .fees-includes { flex-direction: column; }
 }
 
+/* ============================================
+   Tenders Page — Addendum
+   ============================================ */
+.addendum-notice {
+  background: #fff8e1;
+  border-left: 5px solid #c9a84c;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.addendum-notice-icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.addendum-notice-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #7a5c00;
+  margin: 0 0 0.3rem;
+}
+.addendum-notice-body {
+  margin: 0;
+  color: #5a4200;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.addendum-notice-meta {
+  margin: 0.5rem 0 0;
+  color: #7a5a00;
+  font-size: 0.85rem;
+}
+.tender-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.news-card--addendum {
+  border-left: 4px solid #c9a84c;
+}
+.news-card-img--addendum {
+  background: #f5ead4;
+}
+.news-card-img--addendum span {
+  color: #7a5c00;
+}
+.addendum-list {
+  font-size: 0.92rem;
+  padding-left: 1.2rem;
+  margin: 0.75rem 0;
+}
+.addendum-card-meta {
+  font-size: 0.87rem;
+  color: #666;
+}
+
 /* Print */
 @media print {
   .header, .footer, .back-to-top, .scroll-progress, .cursor-dot, .cursor-ring, .ticker, .carousel-arrow, .carousel-dots { display: none !important; }
