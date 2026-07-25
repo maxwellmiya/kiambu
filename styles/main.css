@@ -8381,6 +8381,91 @@ p { margin-bottom: 1rem; }
   color: #666;
 }
 
+/* Open Tenders Grid */
+.open-tenders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0 1rem;
+}
+.tender-participate-grid {
+  margin-top: 3rem;
+}
+.open-tender-card {
+  background: var(--white);
+  border: 1px solid #ECE5EA;
+  border-radius: var(--radius-sm);
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+.open-tender-card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+.open-tender-code {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+.open-tender-card h4 {
+  font-size: 1.02rem;
+  margin: 0;
+  line-height: 1.35;
+}
+.open-tender-meta {
+  font-size: 0.8rem;
+  color: #7A6470;
+  margin: 0 0 0.4rem;
+}
+.open-tender-card .btn {
+  align-self: flex-start;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.75rem;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+.status-badge--closed {
+  background: #eee;
+  color: #666;
+}
+
+/* Archived / closed section */
+.archive-divider {
+  width: 100%;
+  height: 1px;
+  background: #ECE5EA;
+  border: none;
+  margin: 4.5rem 0 3rem;
+}
+.news-card--closed {
+  opacity: 0.72;
+  filter: grayscale(0.2);
+  border-left: 4px solid #a3a3a3;
+}
+.news-card--closed .news-card-img { background: #ececec; }
+.news-card--closed .news-card-img span { color: #888; }
+
+@media (max-width: 768px) {
+  .open-tenders-grid { grid-template-columns: 1fr; }
+}
+
 /* Print */
 @media print {
   .header, .footer, .back-to-top, .scroll-progress, .cursor-dot, .cursor-ring, .ticker, .carousel-arrow, .carousel-dots { display: none !important; }
